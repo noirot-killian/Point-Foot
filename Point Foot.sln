@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Point Foot", "Point Foot\Point Foot.csproj", "{CECE4B38-9838-4BDC-9CDD-ACF5DE21C7DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CECE4B38-9838-4BDC-9CDD-ACF5DE21C7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECE4B38-9838-4BDC-9CDD-ACF5DE21C7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECE4B38-9838-4BDC-9CDD-ACF5DE21C7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECE4B38-9838-4BDC-9CDD-ACF5DE21C7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AC2D40A-3AAB-4AB0-9057-7E10DD85CB89}
+	EndGlobalSection
+EndGlobal
