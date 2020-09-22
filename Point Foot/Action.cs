@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Point_Foot
 {
-    class Action
+    public class Action
     {
-        private int code_Act;
-        private string designation_Act;
+        private int codeAct;
+        private string desiAct;
         private int bareme;
         private bool jeune;
 
-        public int Code_Act { get => code_Act; set => code_Act = value; }
-        public string Designation_Act { get => designation_Act; set => designation_Act = value; }
+        public int Code_Act { get => codeAct; set => codeAct = value; }
+        public string Designation_Act { get => desiAct; set => desiAct = value; }
         public int Bareme { get => bareme; set => bareme = value; }
         public bool Jeune { get => jeune; set => jeune = value; }
 
         public Action(int unCodeAct, string uneDesignationAct, int unBareme, bool unJeune)
         {
-            this.code_Act = unCodeAct;
-            this.designation_Act = uneDesignationAct;
+            this.codeAct = unCodeAct;
+            this.desiAct = uneDesignationAct;
             this.bareme = unBareme;
             this.jeune = unJeune;
         }

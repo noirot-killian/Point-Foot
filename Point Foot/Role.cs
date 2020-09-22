@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Point_Foot
 {
-    class Role
+    public class Role
     {
         private int idRole;
         private string libelle;
