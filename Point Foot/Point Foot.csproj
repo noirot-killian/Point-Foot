@@ -103,7 +103,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ActionProfil.cs" />
     <Compile Include="Ado.cs" />
+    <Compile Include="AdoAction.cs" />
+    <Compile Include="AdoActionProfil.cs" />
+    <Compile Include="AdoCategorie.cs" />
     <Compile Include="AdoProfil.cs" />
     <Compile Include="AdoRole.cs" />
     <Compile Include="Role.cs" />

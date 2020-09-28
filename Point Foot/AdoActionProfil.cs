@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace Point_Foot
 {
-    public class AdoRole : Ado
+    public class AdoActionProfil : Ado
     {
-        public static List<Role> All()
+        public static List<ActionProfil> All()
         {
             try
             {
-                List<Role> roles = new List<Role>();
+                List<ActionProfil> actions_profils = new List<ActionProfil>();
                 MySqlDataReader reader; // Contiendra les données
                 open();
-                MySqlCommand requete = new MySqlCommand("SELECT * FROM role");
+                MySqlCommand requete = new MySqlCommand("SELECT * FROM action_profil");
                 requete.Connection = conn; // Connexion instanciée auparavant
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    Role r = new Role((Int32)reader["idRole"], (String)reader["libelle"]);
-                    roles.Add(r);
+                    ActionProfil ap = new ActionProfil((Int32)reader["idProfil"], (Int32)reader["codeAct"], (Double)reader["nbPointsGagnés"], (DateTime)reader["datePointsGagnés"]);
+                    actions_profils.Add(ap);
                 }
                 reader.Close();
-                return roles;
+                return actions_profils;
             }
             catch (Exception ex)
             {

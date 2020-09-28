@@ -9,7 +9,7 @@ namespace Point_Foot
 {
     public class AdoProfil : Ado
     {
-        public static List<Profil> all()
+        public static List<Profil> All()
         {
             try
             {
@@ -21,7 +21,7 @@ namespace Point_Foot
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    Profil p = new Profil((Int32)reader["id"], (String)reader["nom"], (String)reader["prenom"], (DateTime)reader["dateNaiss"], (String)reader["pseudo"], (String)reader["mdp"], (String)reader["mail"], (Int32)reader["score"]);
+                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (DateTime)reader["dateNaiss"], (String)reader["pseudo"], (String)reader["mdp"], (String)reader["mail"], (Int32)reader["score"]);
                     profils.Add(p);
                 }
                 reader.Close();

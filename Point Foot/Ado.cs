@@ -19,7 +19,6 @@ namespace Point_Foot
                 conn = new MySqlConnection(cs);
                 conn.Open();
                 Console.WriteLine("Connexion ouverte");
-
             }
             catch (MySqlException ex)
             {

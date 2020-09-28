@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace Point_Foot
 {
-    public class AdoRole : Ado
+    public class AdoAction : Ado
     {
-        public static List<Role> All()
+        public static List<Action> All()
         {
             try
             {
-                List<Role> roles = new List<Role>();
+                List<Action> actions = new List<Action>();
                 MySqlDataReader reader; // Contiendra les données
                 open();
-                MySqlCommand requete = new MySqlCommand("SELECT * FROM role");
+                MySqlCommand requete = new MySqlCommand("SELECT * FROM action");
                 requete.Connection = conn; // Connexion instanciée auparavant
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    Role r = new Role((Int32)reader["idRole"], (String)reader["libelle"]);
-                    roles.Add(r);
+                    Action a = new Action((Int32)reader["codeAct"], (String)reader["desiAct"], (Int32)reader["bareme"], (Boolean)reader["jeuneO/N"]);
+                    actions.Add(a);
                 }
                 reader.Close();
-                return roles;
+                return actions;
             }
             catch (Exception ex)
             {

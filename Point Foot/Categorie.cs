@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Point_Foot
 {
-    class Categorie
+    public class Categorie
     {
         private int code_Cat;
         private string designation_Cat;
