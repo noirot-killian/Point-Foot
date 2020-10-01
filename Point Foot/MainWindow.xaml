@@ -9,10 +9,10 @@
     <Grid>
         <Frame x:Name="testFrame" Content="" HorizontalAlignment="Left" Height="345" Margin="10,65,0,0" VerticalAlignment="Top" Width="774"/>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="307">
-            <MenuItem x:Name="menuItemRecruteur" Header="Recruteur" Height="50" Width="100">
+            <MenuItem x:Name="menuItemRecruteur" Header="Administrateur" Height="50" Width="100">
                 <MenuItem Header="Créer un joueur" Height="40" Width="201" HorizontalAlignment="Left" FontSize="10" Margin="-26,0,-75,0" Click="MenuItem_Click"/>
             </MenuItem>
-            <MenuItem x:Name="menuItemEntraineur" Header="Entraineur" Height="45" Width="100">
+            <MenuItem x:Name="menuItemEntraineur" Header="Educateur" Height="45" Width="100">
                 <MenuItem Header="Gérer les joueurs" HorizontalAlignment="Left" Height="45" Width="176" Margin="-34,0,-41.2,0" Click="MenuItem_Click_2"/>
             </MenuItem>
             <MenuItem x:Name="menuItemJoueur" Header="Joueur" Height="50" Width="100">

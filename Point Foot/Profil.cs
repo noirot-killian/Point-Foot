@@ -15,12 +15,12 @@ namespace Point_Foot
         private string pseudo;
         private string mdp;
         private DateTime dateNaiss;
-        private int score;
+        private double score;
         private bool licencie;
         private List<Role> roles;
  
         public Profil() { }
-        public Profil(int unId, string unNom, string unPrenom, DateTime uneDateNaiss, string unMail, string unPseudo, string unMdp, int unScore)
+        public Profil(int unId, string unNom, string unPrenom, DateTime uneDateNaiss, string unMail, string unPseudo, string unMdp, double unScore)
         {
             this.idProfil = unId;
             this.nom = unNom;
@@ -72,7 +72,7 @@ namespace Point_Foot
         {
             return this.mdp;
         }
-        public int getScore()
+        public double getScore()
         {
             return this.score;
         }

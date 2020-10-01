@@ -56,7 +56,7 @@ namespace Point_Foot
             {
                 if (!trouve)
                 {
-                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetDateTime("date_naiss"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetString("mdp"), reader.GetInt32("score"));
+                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetDateTime("date_naiss"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetString("mdp"), reader.GetDouble("score"));
                     trouve = true;
                 }
                 Role r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));
