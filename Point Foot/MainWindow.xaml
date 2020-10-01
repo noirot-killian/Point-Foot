@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Point_Foot"
         mc:Ignorable="d"
-        Title="MainWindowzzs" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Frame x:Name="testFrame" Content="" HorizontalAlignment="Left" Height="345" Margin="10,65,0,0" VerticalAlignment="Top" Width="774"/>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="307">
+            <MenuItem x:Name="menuItemRecruteur" Header="Recruteur" Height="50" Width="100">
+                <MenuItem Header="Créer un joueur" Height="40" Width="201" HorizontalAlignment="Left" FontSize="10" Margin="-26,0,-75,0" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="menuItemEntraineur" Header="Entraineur" Height="45" Width="100">
+                <MenuItem Header="Gérer les joueurs" HorizontalAlignment="Left" Height="45" Width="176" Margin="-34,0,-41.2,0" Click="MenuItem_Click_2"/>
+            </MenuItem>
+            <MenuItem x:Name="menuItemJoueur" Header="Joueur" Height="50" Width="100">
+                <MenuItem Header="Mes points" HorizontalAlignment="Left" Height="50" Width="158" Margin="-11,0,-23.8,0" Click="MenuItem_Click_1"/>
+            </MenuItem>
+        </Menu>
+        <Grid x:Name="gridConnection" HorizontalAlignment="Left" Height="210" Margin="277,108,0,0" VerticalAlignment="Top" Width="412" Panel.ZIndex="1">
+            <Label Content="pseudo : " HorizontalAlignment="Left" Margin="74,28,0,0" VerticalAlignment="Top" Width="61" Height="25"/>
+            <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="22" Margin="47,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
+            <Label Content="mot de passe :" HorizontalAlignment="Left" Margin="59,85,0,0" VerticalAlignment="Top" Height="24" Width="95"/>
+            <Button x:Name="btnConnexion" Content="Se connecter" HorizontalAlignment="Left" Margin="69,158,0,0" VerticalAlignment="Top" Width="66" Click="btnConnexion_Click" Height="18"/>
+            <Label x:Name="lblIdentifiant" Content="Identifiant manquant ou incorrect" HorizontalAlignment="Left" Height="51" Margin="182,58,0,0" VerticalAlignment="Top" Width="198" Background="White" Foreground="#FFE24040"/>
+            <Label x:Name="lblMdp" Content="Mot de passe manquant ou incorrect" HorizontalAlignment="Left" Height="39" Margin="182,114,0,0" VerticalAlignment="Top" Width="220" Foreground="#FFE23535"/>
+            <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="22" Margin="47,114,0,0" VerticalAlignment="Top" Width="107"/>
+        </Grid>
+        <Label x:Name="lblNom" Content="" HorizontalAlignment="Left" Height="55" Margin="354,10,0,0" VerticalAlignment="Top" Width="256"/>
     </Grid>
 </Window>

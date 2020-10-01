@@ -44,15 +44,79 @@ namespace Point_Foot
             this.roles = new List<Role>();
         }
 
-        public int Id_profil { get => idProfil; set => idProfil = value; }
-        public string Nom { get => nom; set => nom = value; }
-        public string Prenom { get => prenom; set => prenom = value; }
-        public string Mail { get => mail; set => mail = value; }
-        public string Pseudo { get => pseudo; set => pseudo = value; }
-        public string Mdp { get => mdp; set => mdp = value; }
-        public DateTime Date_Naiss { get => dateNaiss; set => dateNaiss = value; }
-        public int Score { get => score; set => score = value; }
-        public bool Licencie { get => licencie; set => licencie = value; }
-        internal List<Role> Roles { get => roles; set => roles = value; }
+        public int getIdProfil()
+        {
+            return this.idProfil;
+        }
+        public string getNom()
+        {
+            return this.nom;
+        }
+        public string getPrenom()
+        {
+            return this.prenom;
+        }
+        public DateTime getDateNaiss()
+        {
+            return this.dateNaiss;
+        }
+        public string getMail()
+        {
+            return this.mail;
+        }
+        public string getPseudo()
+        {
+            return this.pseudo;
+        }
+        public string getMdp()
+        {
+            return this.mdp;
+        }
+        public int getScore()
+        {
+            return this.score;
+        }
+        public List<Role> getRoles()
+        {
+            return this.roles;
+        }
+
+        // setters
+        public void setIdProfil(int newIdProfil)
+        {
+            this.idProfil = newIdProfil;
+        }
+        public void setNom(string newNom)
+        {
+            this.nom = newNom;
+        }
+        public void setPrenom(string newPrenom)
+        {
+            this.prenom = newPrenom;
+        }
+        public void setDateNaiss(DateTime newDateNaiss)
+        {
+            this.dateNaiss = newDateNaiss;
+        }
+        public void setMail(string newMail)
+        {
+            this.mail = newMail;
+        }
+        public void setPseudo(string newPseudo)
+        {
+            this.pseudo = newPseudo;
+        }
+        public void setMdp(string newMdp)
+        {
+            this.mdp = newMdp;
+        }
+        public void setScore(int newScore)
+        {
+            this.score = newScore;
+        }
+        public void setRoles(List<Role> newRoles)
+        {
+            this.roles = newRoles;
+        }
     }
 }

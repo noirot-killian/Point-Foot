@@ -13,7 +13,7 @@ namespace Point_Foot
         protected static void open()
         {
 
-            string cs = @"server=localhost;userid=root;password=;database=slam5";
+            string cs = @"server=localhost;userid=root;password=;database=ppe3";
             try
             {
                 conn = new MySqlConnection(cs);

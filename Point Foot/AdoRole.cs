@@ -38,5 +38,30 @@ namespace Point_Foot
                 close();
             }
         }
+        public static Role unRole(string libelle)
+        {
+
+
+            Role r = null;
+            MySqlDataReader reader;
+            open();
+            MySqlCommand requete = new MySqlCommand();
+            requete.Connection = conn;
+            requete.CommandText = ("SELECT * FROM(role r INNER JOIN profil_role pr ON r.idRole = pr.FK_idRole) INNER JOIN profil p ON pr.FK_idProfil = p.idProfil WHERE libelle = @libelle");
+            requete.Parameters.AddWithValue("@libelle", libelle);
+            requete.ExecuteNonQuery();
+            reader = requete.ExecuteReader();
+            while (reader.Read())
+            {
+
+                r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));
+                Profil p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetString("mdp"), reader.GetDateTime("DateNaissance"));
+                r.getProfils().Add(p);
+                p.getRoles().Add(r);
+
+            }
+            reader.Close();
+            return r;
+        }
     }
 }

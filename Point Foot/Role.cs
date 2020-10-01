@@ -27,8 +27,32 @@ namespace Point_Foot
             List<Profil> profils = new List<Profil>();
         }
 
-        public int IdRole { get => idRole; set => idRole = value; }
-        public string Libelle { get => libelle; set => libelle = value; }
-        internal List<Profil> Profils { get => profils; set => profils = value; }
+        // getters
+        public int getIdRole()
+        {
+            return this.idRole;
+        }
+        public string getLibelle()
+        {
+            return this.libelle;
+        }
+        public List<Profil> getProfils()
+        {
+            return this.profils;
+        }
+
+        // setters
+        public void setIdRole(int newIdRole)
+        {
+            this.idRole = newIdRole;
+        }
+        public void setLibelle(string newLibelle)
+        {
+            this.libelle = newLibelle;
+        }
+        public void setProfils(List<Profil> newProfils)
+        {
+            this.profils = newProfils;
+        }
     }
 }
