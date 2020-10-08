@@ -20,7 +20,7 @@ namespace Point_Foot
         private List<Role> roles;
 
         public Profil() { }
-        public Profil(int unId, string unNom, string unPrenom, DateTime uneDateNaiss, string unMail, string unPseudo, string unMdp, double unScore)
+        public Profil(int unId, string unNom, string unPrenom, DateTime uneDateNaiss, string unMail, string unPseudo, string unMdp, double unScore, string unNumLicence)
         {
             this.idProfil = unId;
             this.nom = unNom;
@@ -30,6 +30,7 @@ namespace Point_Foot
             this.pseudo = unPseudo;
             this.mdp = unMdp;
             this.score = unScore;
+            this.numLicence = unNumLicence;
             this.roles = new List<Role>();
         }
         public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate)
@@ -76,6 +77,10 @@ namespace Point_Foot
         {
             return this.score;
         }
+        public string getNumLicence()
+        {
+            return this.numLicence;
+        }
         public List<Role> getRoles()
         {
             return this.roles;
@@ -113,6 +118,10 @@ namespace Point_Foot
         public void setScore(int newScore)
         {
             this.score = newScore;
+        }
+        public void setNumLicence(string newNumLicence)
+        {
+            this.numLicence = newNumLicence;
         }
         public void setRoles(List<Role> newRoles)
         {
