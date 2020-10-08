@@ -11,23 +11,32 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="tbxNom" HorizontalAlignment="Left" Height="50" Margin="303,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="tbxPrenom" HorizontalAlignment="Left" Height="51" Margin="520,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
-        <TextBox x:Name="tbxMail" HorizontalAlignment="Left" Height="51" Margin="742,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="51" Margin="303,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.653,0.275"/>
-        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="51" Margin="742,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" RenderTransformOrigin="0.858,-0.373"/>
-        <TextBox x:Name="tbxScore" HorizontalAlignment="Left" Height="52" Margin="303,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="tbxNumLicence" HorizontalAlignment="Left" Height="51" Margin="742,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
-        <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="51" Margin="520,117,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="tbxNom" HorizontalAlignment="Left" Height="32" Margin="255,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"/>
+        <TextBox x:Name="tbxPrenom" HorizontalAlignment="Left" Height="33" Margin="461,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+        <TextBox x:Name="tbxMail" HorizontalAlignment="Left" Height="36" Margin="664,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.457"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="29" Margin="272,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.653,0.275"/>
+        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="29" Margin="779,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.858,-0.373"/>
+        <TextBox x:Name="tbxScore" HorizontalAlignment="Left" Height="30" Margin="272,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
+        <TextBox x:Name="tbxNumLicence" HorizontalAlignment="Left" Height="30" Margin="760,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
+        <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="29" Margin="520,117,0,0" VerticalAlignment="Top" Width="118"/>
         <Button x:Name="btnCréer" Content="Créer" HorizontalAlignment="Left" Height="56" Margin="420,198,0,0" VerticalAlignment="Top" Width="173" Click="btnCréer_Click"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Height="50" Margin="615,39,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Date Naissance:" HorizontalAlignment="Left" Height="51" Margin="615,117,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Numero de licence:" HorizontalAlignment="Left" Height="51" Margin="615,202,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Prénom:" HorizontalAlignment="Left" Height="50" Margin="402,40,0,0" VerticalAlignment="Top" Width="74"/>
-        <Label Content="Nom:" HorizontalAlignment="Left" Height="49" Margin="207,41,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Pseudo:" HorizontalAlignment="Left" Height="51" Margin="207,117,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Mot de passe:" HorizontalAlignment="Left" Height="51" Margin="402,117,0,0" VerticalAlignment="Top" Width="74"/>
-        <Label Content="Score:&#xD;&#xA;" HorizontalAlignment="Left" Height="51" Margin="207,203,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Email :" HorizontalAlignment="Left" Height="33" Margin="615,39,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label Content="Date de naissance :" HorizontalAlignment="Left" Height="29" Margin="660,117,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Numéro de licence :" HorizontalAlignment="Left" Height="30" Margin="620,179,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.574,-0.067"/>
+        <Label Content="Prénom :" HorizontalAlignment="Left" Height="32" Margin="402,40,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Height="31" Margin="207,41,0,0" VerticalAlignment="Top" Width="43"/>
+        <Label Content="Pseudo :" HorizontalAlignment="Left" Height="29" Margin="207,117,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Mot de passe :" HorizontalAlignment="Left" Height="29" Margin="420,117,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Score : " HorizontalAlignment="Left" Height="29" Margin="207,180,0,0" VerticalAlignment="Top" Width="60"/>
 
     </Grid>
 </Page> 

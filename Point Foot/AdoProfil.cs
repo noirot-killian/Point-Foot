@@ -74,7 +74,6 @@ namespace Point_Foot
         }
         public static void create(Profil profil)
         {
-
             try
             {
                 open();
@@ -92,6 +91,26 @@ namespace Point_Foot
                 cmd.Parameters.AddWithValue("@numLicence", profil.getNumLicence());
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("profil créé");
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+        }
+        public static void delete(int unId)
+        {
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE * FROM profil WHERE idProfil = @id";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", unId);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("profil supprimé");
                 close();
             }
             catch (MySqlException ex)
