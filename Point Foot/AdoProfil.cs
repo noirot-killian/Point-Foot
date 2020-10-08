@@ -71,8 +71,34 @@ namespace Point_Foot
             }
             reader.Close();
             return p;
+        }
+        public static void create(Profil profil)
+        {
 
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO profil(nom,prenom,mail,pseudo,mdp,date_naiss,score,numLicence) VALUES(@nom,@prenom,@mail,@pseudo,@mdp,@date_naiss,@score,@numLicence)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@nom", profil.getNom());
+                cmd.Parameters.AddWithValue("@prenom", profil.getPrenom());
+                cmd.Parameters.AddWithValue("@mail", profil.getMail());
+                cmd.Parameters.AddWithValue("@pseudo", profil.getPseudo());
+                cmd.Parameters.AddWithValue("@mdp", profil.getMdp());
+                cmd.Parameters.AddWithValue("@date_naiss", profil.getDateNaiss());
+                cmd.Parameters.AddWithValue("@score", profil.getScore());
+                cmd.Parameters.AddWithValue("@numLicence", profil.getNumLicence());
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("profil créé");
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
 
+            }
         }
     }
 }
