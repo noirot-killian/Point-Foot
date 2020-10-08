@@ -8,7 +8,7 @@ namespace Point_Foot
 {
     public class Profil
     {
-        private int idProfil;
+        private int idProfil; //coucou c'est un test
         private string nom;
         private string prenom;
         private string mail;
