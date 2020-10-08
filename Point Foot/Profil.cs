@@ -8,7 +8,7 @@ namespace Point_Foot
 {
     public class Profil
     {
-        private int idProfil; 
+        private int idProfil;
         private string nom;
         private string prenom;
         private string mail;
@@ -18,7 +18,7 @@ namespace Point_Foot
         private double score;
         private string numLicence; //coucou c'est un deuxième test
         private List<Role> roles;
- 
+
         public Profil() { }
         public Profil(int unId, string unNom, string unPrenom, DateTime uneDateNaiss, string unMail, string unPseudo, string unMdp, double unScore)
         {
