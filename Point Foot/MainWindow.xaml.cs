@@ -20,9 +20,11 @@ namespace Point_Foot
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Profil> profils;
         public MainWindow()
         {
             InitializeComponent();
+            this.profils = AdoProfil.All();
             foreach (Control i in menu.Items)
             {
                 i.Visibility = Visibility.Hidden;

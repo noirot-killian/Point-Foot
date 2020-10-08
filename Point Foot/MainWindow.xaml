@@ -22,12 +22,13 @@
         <Grid x:Name="gridConnection" HorizontalAlignment="Left" Height="210" Margin="277,108,0,0" VerticalAlignment="Top" Width="412" Panel.ZIndex="1">
             <Label Content="pseudo : " HorizontalAlignment="Left" Margin="74,28,0,0" VerticalAlignment="Top" Width="61" Height="25"/>
             <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="22" Margin="47,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
-            <Label Content="mot de passe :" HorizontalAlignment="Left" Margin="59,85,0,0" VerticalAlignment="Top" Height="24" Width="95"/>
-            <Button x:Name="btnConnexion" Content="Se connecter" HorizontalAlignment="Left" Margin="69,158,0,0" VerticalAlignment="Top" Width="66" Click="btnConnexion_Click" Height="18"/>
+            <Label Content="mot de passe :" HorizontalAlignment="Left" Margin="49,91,0,0" VerticalAlignment="Top" Height="29" Width="95"/>
+            <Button x:Name="btnConnexion" Content="Se connecter" HorizontalAlignment="Left" Margin="59,168,0,0" VerticalAlignment="Top" Width="85" Click="btnConnexion_Click" Height="42"/>
             <Label x:Name="lblIdentifiant" Content="Identifiant manquant ou incorrect" HorizontalAlignment="Left" Height="51" Margin="182,58,0,0" VerticalAlignment="Top" Width="198" Background="White" Foreground="#FFE24040"/>
             <Label x:Name="lblMdp" Content="Mot de passe manquant ou incorrect" HorizontalAlignment="Left" Height="39" Margin="182,114,0,0" VerticalAlignment="Top" Width="220" Foreground="#FFE23535"/>
-            <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="22" Margin="47,114,0,0" VerticalAlignment="Top" Width="107"/>
+            <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="22" Margin="49,125,0,0" VerticalAlignment="Top" Width="107"/>
         </Grid>
         <Label x:Name="lblNom" Content="" HorizontalAlignment="Left" Height="55" Margin="354,10,0,0" VerticalAlignment="Top" Width="256"/>
+        <Label x:Name="lblAction" Content="" HorizontalAlignment="Left" Height="34" Margin="58,300,0,0" VerticalAlignment="Top" Width="160"/>
     </Grid>
 </Window>
