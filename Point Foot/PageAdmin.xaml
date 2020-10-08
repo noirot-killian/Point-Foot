@@ -4,20 +4,22 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Point_Foot"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageAdmin">
+      mc:Ignorable="d"
+      Title="PageAdmin" Height="1182" Width="1019">
 
-    <Grid Background="#FFFFFCFC" Margin="0,0,0,-525">
-        <TextBox x:Name="tbxNom" HorizontalAlignment="Left" Height="51" Margin="282,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="tbxNomJoueur_TextChanged"/>
-        <TextBox x:Name="tbxPrenom" HorizontalAlignment="Left" Height="51" Margin="282,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="tbxNomJoueur_TextChanged"/>
-        <TextBox x:Name="tbxMail" HorizontalAlignment="Left" Height="51" Margin="282,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="tbxNomJoueur_TextChanged"/>
-        <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="51" Margin="282,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="tbxNomJoueur_TextChanged"/>
-        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="51" Margin="282,532,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="tbxNomJoueur_TextChanged"/>
-        <TextBox x:Name="tbxScore" HorizontalAlignment="Left" Height="51" Margin="282,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="tbxNomJoueur_TextChanged"/>
-        <TextBox x:Name="tbxNumLicence" HorizontalAlignment="Left" Height="51" Margin="282,757,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="tbxNomJoueur_TextChanged"/>
-        <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="60" Margin="282,432,0,0" VerticalAlignment="Top" Width="204"/>
-        <Button x:Name="btnCréer" Content="Créer" HorizontalAlignment="Left" Height="57" Margin="252,867,0,0" VerticalAlignment="Top" Width="264"/>
+    <Grid Background="#FFFFFCFC" Margin="-181,10,-38,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="tbxNom" HorizontalAlignment="Left" Height="51" Margin="213,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="tbxPrenom" HorizontalAlignment="Left" Height="51" Margin="486,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="tbxMail" HorizontalAlignment="Left" Height="51" Margin="804,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="51" Margin="213,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="51" Margin="804,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.858,-0.373"/>
+        <TextBox x:Name="tbxScore" HorizontalAlignment="Left" Height="51" Margin="213,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="tbxNumLicence" HorizontalAlignment="Left" Height="51" Margin="486,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="60" Margin="486,156,0,0" VerticalAlignment="Top" Width="204"/>
+        <Button x:Name="btnCréer" Content="Créer" HorizontalAlignment="Left" Height="57" Margin="804,255,0,0" VerticalAlignment="Top" Width="264" Click="btnCréer_Click"/>
 
     </Grid>
 </Page>
