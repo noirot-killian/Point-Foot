@@ -16,7 +16,7 @@ namespace Point_Foot
         private string mdp;
         private DateTime dateNaiss;
         private double score;
-        private string numLicence; //coucou c'est un deuxième test
+        private string numLicence; 
         private List<Role> roles;
 
         public Profil() { }
