@@ -20,15 +20,15 @@ namespace Point_Foot
         private List<Role> roles;
 
         public Profil() { }
-        public Profil(int unId, string unNom, string unPrenom, DateTime uneDateNaiss, string unMail, string unPseudo, string unMdp, double unScore, string unNumLicence)
+        public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDateNaiss, double unScore, string unNumLicence)
         {
             this.idProfil = unId;
             this.nom = unNom;
             this.prenom = unPrenom;
-            this.dateNaiss = uneDateNaiss;
             this.mail = unMail;
             this.pseudo = unPseudo;
             this.mdp = unMdp;
+            this.dateNaiss = uneDateNaiss;
             this.score = unScore;
             this.numLicence = unNumLicence;
             this.roles = new List<Role>();
