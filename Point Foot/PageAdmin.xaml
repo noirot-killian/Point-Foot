@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Title="PageAdmin" Height="630.566" Width="1019">
 
-    <Grid Background="#FFFFFCFC" Margin="-181,10,-38,143">
+    <Grid Margin="-181,10,-38,143">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>

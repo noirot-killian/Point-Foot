@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,16 @@ namespace Point_Foot
 {
     public class AdoProfil : Ado
     {
+        static string Encrypt(string value)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding utf8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(utf8.GetBytes(value));
+                return Convert.ToBase64String(data);
+
+            }
+        }
         public static List<Profil> All()
         {
             try
@@ -85,7 +96,7 @@ namespace Point_Foot
                 cmd.Parameters.AddWithValue("@prenom", profil.getPrenom());
                 cmd.Parameters.AddWithValue("@mail", profil.getMail());
                 cmd.Parameters.AddWithValue("@pseudo", profil.getPseudo());
-                cmd.Parameters.AddWithValue("@mdp", profil.getMdp());
+                cmd.Parameters.AddWithValue("@mdp", Encrypt(profil.getMdp()));
                 cmd.Parameters.AddWithValue("@date_naiss", profil.getDateNaiss());
                 cmd.Parameters.AddWithValue("@score", profil.getScore());
                 cmd.Parameters.AddWithValue("@numLicence", profil.getNumLicence());
