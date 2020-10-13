@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Renci.SshNet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Point_Foot
 {
     public class Profil
     {
+       
+
         private int idProfil;
         private string nom;
         private string prenom;
@@ -20,14 +23,14 @@ namespace Point_Foot
         private List<Role> roles;
 
         public Profil() { }
-        public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDateNaiss, double unScore, string unNumLicence)
+        public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence)
         {
             this.idProfil = unId;
             this.nom = unNom;
             this.prenom = unPrenom;
             this.mail = unMail;
             this.pseudo = unPseudo;
-            this.mdp = unMdp;
+            this.mdp = RandomPassword();
             this.dateNaiss = uneDateNaiss;
             this.score = unScore;
             this.numLicence = unNumLicence;
@@ -40,11 +43,11 @@ namespace Point_Foot
             this.prenom = unPrenom;
             this.mail = unMail;
             this.pseudo = unPseudo;
-            this.mdp = unMdp;
+            this.mdp = RandomPassword();
             this.dateNaiss = uneDate;
             this.roles = new List<Role>();
         }
-
+  
         public int getIdProfil()
         {
             return this.idProfil;
@@ -127,5 +130,20 @@ namespace Point_Foot
         {
             this.roles = newRoles;
         }
-    }
+        
+        public static string RandomPassword()
+        {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            var finalString = new String(stringChars);
+            return finalString;
+        }
+}
 }

@@ -32,7 +32,7 @@ namespace Point_Foot
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mdp"], (String)reader["mail"], (DateTime)reader["dateNaiss"],(Int32)reader["score"], (String)reader["numLicence"]);
+                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["dateNaiss"],(Int32)reader["score"], (String)reader["numLicence"]);
                     profils.Add(p);
                 }
                 reader.Close();
@@ -72,7 +72,7 @@ namespace Point_Foot
                     {
                         score = reader.GetDouble(7);
                     }
-                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetString("mdp"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"]);
+                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"]);
                     trouve = true;
                 }
                 Role r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));
