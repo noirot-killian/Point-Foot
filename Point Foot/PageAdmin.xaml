@@ -7,13 +7,16 @@
       mc:Ignorable="d"
       Title="PageAdmin" Height="630.566" Width="1019">
 
-    <Grid Margin="-181,10,-38,143">
+    <Grid Margin="10,-50,-228.8,232.4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="1105*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="tbxNom" HorizontalAlignment="Left" Height="32" Margin="255,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"/>
-        <TextBox x:Name="tbxPrenom" HorizontalAlignment="Left" Height="33" Margin="461,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
-        <TextBox x:Name="tbxMail" HorizontalAlignment="Left" Height="36" Margin="664,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" RenderTransformOrigin="0.5,0.5">
+        <TextBox x:Name="tbxNom" HorizontalAlignment="Left" Height="32" Margin="9.8,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3"/>
+        <TextBox x:Name="tbxPrenom" HorizontalAlignment="Left" Height="33" Margin="9.8,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3"/>
+        <TextBox x:Name="tbxMail" HorizontalAlignment="Left" Height="33" Margin="9.8,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -23,20 +26,18 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="29" Margin="272,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.653,0.275"/>
-        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="29" Margin="779,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.858,-0.373"/>
-        <TextBox x:Name="tbxScore" HorizontalAlignment="Left" Height="30" Margin="272,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
-        <TextBox x:Name="tbxNumLicence" HorizontalAlignment="Left" Height="30" Margin="760,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
-        <PasswordBox x:Name="pbxMdp" HorizontalAlignment="Left" Height="29" Margin="520,117,0,0" VerticalAlignment="Top" Width="118"/>
-        <Button x:Name="btnCréer" Content="Créer" HorizontalAlignment="Left" Height="56" Margin="420,198,0,0" VerticalAlignment="Top" Width="173" Click="btnCréer_Click"/>
-        <Label Content="Email :" HorizontalAlignment="Left" Height="33" Margin="615,39,0,0" VerticalAlignment="Top" Width="51"/>
-        <Label Content="Date de naissance :" HorizontalAlignment="Left" Height="29" Margin="660,117,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Numéro de licence :" HorizontalAlignment="Left" Height="30" Margin="620,179,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.574,-0.067"/>
-        <Label Content="Prénom :" HorizontalAlignment="Left" Height="32" Margin="402,40,0,0" VerticalAlignment="Top" Width="74"/>
-        <Label Content="Nom :" HorizontalAlignment="Left" Height="31" Margin="207,41,0,0" VerticalAlignment="Top" Width="43"/>
-        <Label Content="Pseudo :" HorizontalAlignment="Left" Height="29" Margin="207,117,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Mot de passe :" HorizontalAlignment="Left" Height="29" Margin="420,117,0,0" VerticalAlignment="Top" Width="89"/>
-        <Label Content="Score : " HorizontalAlignment="Left" Height="29" Margin="207,180,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="29" Margin="10.8,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.653,0.275" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3"/>
+        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="29" Margin="106.8,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.858,-0.373" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3"/>
+        <TextBox x:Name="tbxScore" HorizontalAlignment="Left" Height="30" Margin="70,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" FontFamily="Franklin Gothic Demi Cond" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxNumLicence" HorizontalAlignment="Left" Height="30" Margin="106.8,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3"/>
+        <Button x:Name="btnCréer" Content="Créer" HorizontalAlignment="Left" Height="27" Margin="47,364,0,0" VerticalAlignment="Top" Width="173" Click="btnCréer_Click" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Background="#FF6DBBF3" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Label Content="Email :" HorizontalAlignment="Left" Height="33" Margin="46,159,0,0" VerticalAlignment="Top" Width="72" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Date de naissance :" HorizontalAlignment="Left" Height="29" Margin="47,232,0,0" VerticalAlignment="Top" Width="168" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label Content="Numéro de licence :" HorizontalAlignment="Left" Height="30" Margin="46,300,0,0" VerticalAlignment="Top" Width="169" RenderTransformOrigin="0.574,-0.067" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label Content="Prénom :" HorizontalAlignment="Left" Height="32" Margin="46,117,0,0" VerticalAlignment="Top" Width="85" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Height="31" Margin="46,81,0,0" VerticalAlignment="Top" Width="60" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Pseudo :" HorizontalAlignment="Left" Height="29" Margin="47,198,0,0" VerticalAlignment="Top" Width="85" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label Content="Score : " HorizontalAlignment="Left" Height="29" Margin="47,266,0,0" VerticalAlignment="Top" Width="71" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page> 
