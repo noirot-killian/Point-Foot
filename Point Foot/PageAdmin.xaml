@@ -38,7 +38,7 @@
         <Label Content="Nom :" HorizontalAlignment="Left" Height="31" Margin="46,81,0,0" VerticalAlignment="Top" Width="60" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label Content="Pseudo :" HorizontalAlignment="Left" Height="29" Margin="47,198,0,0" VerticalAlignment="Top" Width="85" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Label Content="Score : " HorizontalAlignment="Left" Height="29" Margin="47,266,0,0" VerticalAlignment="Top" Width="71" FontFamily="Franklin Gothic Demi Cond" Background="{x:Null}" Foreground="White" FontSize="18" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <ListBox x:Name="l" Grid.Column="3" HorizontalAlignment="Left" Height="100" Margin="351.2,177,0,0" VerticalAlignment="Top" Width="100" SelectionMode="Multiple"/>
+        <ListBox x:Name="l" Grid.Column="3" HorizontalAlignment="Left" Height="87" Margin="356.2,81,0,0" VerticalAlignment="Top" Width="144" SelectionMode="Multiple" FontFamily="Franklin Gothic Demi Cond" FontSize="18"/>
 
     </Grid>
 </Page> 

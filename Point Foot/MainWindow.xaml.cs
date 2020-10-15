@@ -37,13 +37,16 @@ namespace Point_Foot
             menuItemJoueur.Visibility = Visibility.Collapsed;
             lblCache.Visibility = Visibility.Visible;
 
-
+        
             Profil p = AdoProfil.unProfil(tbxPseudo.Text, pbxMdp.Password);
+            
             if (p != null)
             {
+
                 lblNom.Content = "Bienvenue" + " " + p.getNom() + " " + p.getPrenom();
                 menu.Visibility = Visibility.Visible;
                 gridConnexion.Visibility = Visibility.Hidden;
+                
 
                 foreach (Role r in p.getRoles())
                 {
@@ -67,9 +70,10 @@ namespace Point_Foot
             }
             else
             {
-                MessageBox.Show("Pseudo ou mot de passe incorrect");
 
+                MessageBox.Show("Pseudo ou mot de passe incorrect");
             }
+            
 
 
         }
@@ -110,6 +114,8 @@ namespace Point_Foot
             menu.Visibility = Visibility.Collapsed;
             gridConnexion.Visibility = Visibility.Visible;
             imgBackground.Visibility = Visibility.Visible;
+            lblCache.Visibility = Visibility.Hidden;
+            lblNom.Visibility = Visibility.Hidden;
             p = null;
             tbxPseudo.Text = "";
             pbxMdp.Password = "";

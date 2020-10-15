@@ -20,6 +20,7 @@ namespace Point_Foot
         private double score;
         private string numLicence; 
         private List<Role> roles;
+        private int premiereCo;
 
         public int IdProfil { get => idProfil; set => idProfil = value; }
 
@@ -36,6 +37,7 @@ namespace Point_Foot
             this.score = unScore;
             this.numLicence = unNumLicence;
             this.roles = new List<Role>();
+            this.premiereCo = 0;
 
         }
         public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate)
@@ -48,6 +50,7 @@ namespace Point_Foot
             this.mdp = RandomPassword();
             this.dateNaiss = uneDate;
             this.roles = new List<Role>();
+            this.premiereCo = 0;
         }
   
         public int getIdProfil()
@@ -89,6 +92,10 @@ namespace Point_Foot
         public List<Role> getRoles()
         {
             return this.roles;
+        }
+        public int getPremiereCo()
+        {
+            return this.premiereCo;
         }
 
         // setters
@@ -132,7 +139,10 @@ namespace Point_Foot
         {
             this.roles = newRoles;
         }
-        
+        public void setPremiereCo(int unePremiereCo)
+        {
+            this.premiereCo = unePremiereCo;
+        }
         public static string RandomPassword()
         {
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
