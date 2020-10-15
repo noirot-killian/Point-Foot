@@ -54,5 +54,10 @@ namespace Point_Foot
         {
             this.profils = newProfils;
         }
+        public override string ToString()
+        {
+            return this.getLibelle();
+
+        }
     }
 }

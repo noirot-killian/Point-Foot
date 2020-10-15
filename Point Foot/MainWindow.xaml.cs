@@ -23,10 +23,12 @@ namespace Point_Foot
 
         private Profil p;
         List<Profil> profils;
+        
         public MainWindow()
         {
 
             InitializeComponent();
+            
             foreach (Control i in menu.Items)
             {
                 i.Visibility = Visibility.Hidden;
@@ -86,6 +88,7 @@ namespace Point_Foot
         {
             testFrame.Content = new PageAdmin();
             lblNom.Visibility = Visibility.Hidden;
+            
 
         }
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)

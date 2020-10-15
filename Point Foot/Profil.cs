@@ -9,7 +9,6 @@ namespace Point_Foot
 {
     public class Profil
     {
-       
 
         private int idProfil;
         private string nom;
@@ -21,6 +20,8 @@ namespace Point_Foot
         private double score;
         private string numLicence; 
         private List<Role> roles;
+
+        public int IdProfil { get => idProfil; set => idProfil = value; }
 
         public Profil() { }
         public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence)
@@ -35,6 +36,7 @@ namespace Point_Foot
             this.score = unScore;
             this.numLicence = unNumLicence;
             this.roles = new List<Role>();
+
         }
         public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate)
         {
@@ -145,5 +147,6 @@ namespace Point_Foot
             var finalString = new String(stringChars);
             return finalString;
         }
-}
+       
+    }
 }

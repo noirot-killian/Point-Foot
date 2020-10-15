@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.X509;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,19 +22,43 @@ namespace Point_Foot
     public partial class PageAdmin : Page
     {
         Random random = new Random();
+        List<Role> roles;
         public PageAdmin()
         {
             InitializeComponent();
+            this.roles = AdoRole.All();
+            l.ItemsSource = null;
+            l.ItemsSource = this.roles;
+          /*  this.cbxRole.SelectedValuePath = "Key";
+            this.cbxRole.DisplayMemberPath = "Value";
+            this.cbxRole.Items.Add(new KeyValuePair<int, string>(1, "Admin"));
+            this.cbxRole.Items.Add(new KeyValuePair<int, string>(30, "frfr"));
+            this.cbxRole.Items.Add(new KeyValuePair<int, string>(50, "frfr"));
+            this.cbxRole.Items.Add(new KeyValuePair<int, string>(100, "frfr"));*/
         }
+       
         
 
         private void btnCréer_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             Profil p = new Profil(0, tbxNom.Text, tbxPrenom.Text, tbxMail.Text, tbxPseudo.Text, Convert.ToDateTime(tbxDateNaiss.Text), Convert.ToInt32(tbxScore.Text), tbxNumLicence.Text);
             // on ajoute le nouveau profil en base de données
-            AdoProfil.create(p);
+           p= AdoProfil.create(p);
+            
+            System.Collections.IList roles = l.SelectedItems;
+            foreach (Role role in roles)
+            {
+                AdoProfil.createProfil(p, role);
+            }
 
-            MessageBox.Show("Le mot de passe est", p.getMdp());
+   
+            MessageBox.Show("Le mot de passe est" + " " + p.getMdp());
         }
+
+        
+
+       
+
+        
     }
 }

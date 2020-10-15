@@ -109,6 +109,7 @@
     <Compile Include="AdoActionProfil.cs" />
     <Compile Include="AdoCategorie.cs" />
     <Compile Include="AdoProfil.cs" />
+    <Compile Include="AdoProfilRole.cs" />
     <Compile Include="AdoRole.cs" />
     <Compile Include="PageAdmin.xaml.cs">
       <DependentUpon>PageAdmin.xaml</DependentUpon>
