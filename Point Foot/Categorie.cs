@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Point_Foot
+﻿namespace Point_Foot
 {
     public class Categorie
     {
@@ -18,7 +12,7 @@ namespace Point_Foot
         public double PrixLicence { get => prixLicence; set => prixLicence = value; }
         public bool Jeune { get => jeune; set => jeune = value; }
 
-        public Categorie (int unCodeCat, string uneDesignationCat, double unPrixLicence, bool unJeune)
+        public Categorie(int unCodeCat, string uneDesignationCat, double unPrixLicence, bool unJeune)
         {
             this.code_Cat = unCodeCat;
             this.designation_Cat = uneDesignationCat;
