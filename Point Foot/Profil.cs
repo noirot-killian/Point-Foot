@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Renci.SshNet;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Point_Foot
 {
     public class Profil
     {
-
 
         private int idProfil;
         private string nom;
@@ -15,8 +18,10 @@ namespace Point_Foot
         private string mdp;
         private DateTime dateNaiss;
         private double score;
-        private string numLicence;
+        private string numLicence; 
         private List<Role> roles;
+
+        public int IdProfil { get => idProfil; set => idProfil = value; }
 
         public Profil() { }
         public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence)
@@ -31,6 +36,7 @@ namespace Point_Foot
             this.score = unScore;
             this.numLicence = unNumLicence;
             this.roles = new List<Role>();
+
         }
         public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate)
         {
@@ -43,7 +49,7 @@ namespace Point_Foot
             this.dateNaiss = uneDate;
             this.roles = new List<Role>();
         }
-
+  
         public int getIdProfil()
         {
             return this.idProfil;
@@ -126,7 +132,7 @@ namespace Point_Foot
         {
             this.roles = newRoles;
         }
-
+        
         public static string RandomPassword()
         {
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -141,5 +147,6 @@ namespace Point_Foot
             var finalString = new String(stringChars);
             return finalString;
         }
+       
     }
 }

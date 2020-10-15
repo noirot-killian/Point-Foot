@@ -83,7 +83,7 @@ namespace Point_Foot
             reader.Close();
             return p;
         }
-        public static void create(Profil profil)
+        public static Profil create(Profil profil)
         {
             try
             {
@@ -101,6 +101,8 @@ namespace Point_Foot
                 cmd.Parameters.AddWithValue("@score", profil.getScore());
                 cmd.Parameters.AddWithValue("@numLicence", profil.getNumLicence());
                 cmd.ExecuteNonQuery();
+               long id = cmd.LastInsertedId; profil.IdProfil = (int)id;
+             
                 Console.WriteLine("profil créé");
                 close();
             }
@@ -109,6 +111,7 @@ namespace Point_Foot
                 Console.WriteLine(ex.Message);
 
             }
+            return profil;
         }
         public static void delete(int unId)
         {
@@ -130,5 +133,31 @@ namespace Point_Foot
 
             }
         }
+        public static void createProfil(Profil p, Role role)
+        {
+            long id = 0;
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO profil_role(idProfil, idRole) VALUES(@idProfil, @idRole)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@idProfil", p.getIdProfil());
+                cmd.Parameters.AddWithValue("@idRole" ,role.getIdRole());
+                cmd.ExecuteNonQuery();
+                
+                Console.WriteLine("Profil crée");
+             
+                close();
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+        }
+
     }
 }
