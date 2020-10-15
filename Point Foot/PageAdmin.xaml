@@ -27,7 +27,7 @@
             </TextBox.RenderTransform>
         </TextBox>
         <TextBox x:Name="tbxPseudo" HorizontalAlignment="Left" Height="29" Margin="11,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.653,0.275" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3" FontSize="18"/>
-        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="29" Margin="107,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.858,-0.373" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3" FontSize="18"/>
+        <TextBox x:Name="tbxDateNaiss" HorizontalAlignment="Left" Height="29" Margin="107,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.858,-0.373" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3" FontSize="18"/>
         <TextBox x:Name="tbxScore" HorizontalAlignment="Left" Height="25" Margin="70,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" FontFamily="Franklin Gothic Demi Cond" Grid.Column="2" Grid.ColumnSpan="2" FontSize="18"/>
         <TextBox x:Name="tbxNumLicence" HorizontalAlignment="Left" Height="30" Margin="107,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" FontFamily="Franklin Gothic Demi Cond" Grid.Column="3" FontSize="18"/>
         <Button x:Name="btnCréer" Content="Créer" HorizontalAlignment="Left" Height="27" Margin="47,364,0,0" VerticalAlignment="Top" Width="173" Click="btnCréer_Click" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Background="#FF6DBBF3" Grid.Column="2" Grid.ColumnSpan="2"/>
