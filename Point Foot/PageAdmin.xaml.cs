@@ -22,7 +22,7 @@ namespace Point_Foot
             // on ajoute le nouveau profil en base de données
             AdoProfil.create(p);
 
-            MessageBox.Show("Le mot de passe est", p.getMdp());
+            MessageBox.Show("Le profil a bien été créé :D");
         }
     }
 }
