@@ -1,10 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Point_Foot
 {
@@ -32,7 +30,7 @@ namespace Point_Foot
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["dateNaiss"],(Int32)reader["score"], (String)reader["numLicence"]);
+                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["dateNaiss"], (Int32)reader["score"], (String)reader["numLicence"]);
                     profils.Add(p);
                 }
                 reader.Close();
