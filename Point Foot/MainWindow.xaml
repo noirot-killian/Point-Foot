@@ -21,7 +21,7 @@
             </MenuItem>
         </Menu>
         <Label x:Name="lblCache" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="794" Height="35" Background="#FF59D2FF" Opacity="0.3" Panel.ZIndex="-4" Margin="0,0,-0.4,0"/>
-        <Grid x:Name="gridConnexion" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Panel.ZIndex="2" Margin="0,0,-0.4,0" KeyDown="gridConnexion_KeyDown" d:IsHidden="True">
+        <Grid x:Name="gridConnexion" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Panel.ZIndex="2" Margin="0,0,-0.4,0" KeyDown="gridConnexion_KeyDown">
             <Label Content="Pseudo :" HorizontalAlignment="Center" Margin="355,186,355,0" VerticalAlignment="Top" Width="84" Height="32" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Foreground="White"/>
             <TextBox x:Name="tbxPseudo" HorizontalAlignment="Center" Height="22" Margin="334,218,335,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
             <Label Content="Mot de passe :" HorizontalAlignment="Center" Margin="0,249,0,0" VerticalAlignment="Top" Height="31" Width="143" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Foreground="White"/>
