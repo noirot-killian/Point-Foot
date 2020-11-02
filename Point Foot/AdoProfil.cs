@@ -32,7 +32,7 @@ namespace Point_Foot
                 {
 
                     //DateTime dt = DateTime.Parse(((DateTime)reader["date_naiss"]).ToString());
-                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"]);
+                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"], (Int32)reader["premiereCo"]);
                     profils.Add(p);
                 }
                 reader.Close();
@@ -68,11 +68,16 @@ namespace Point_Foot
                 if (!trouve)
                 {
                     double score = 0;
+                    int premiereCo = 0;
                     if (!reader.IsDBNull(7))
                     {
                         score = reader.GetDouble(7);
                     }
-                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"]);
+                    if (!reader.IsDBNull(9))
+                    {
+                        premiereCo = reader.GetInt32(9);
+                    }
+                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"], premiereCo);
                     trouve = true;
                 }
                 Role r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));

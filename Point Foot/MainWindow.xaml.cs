@@ -42,17 +42,17 @@ namespace Point_Foot
             
             Profil p = AdoProfil.unProfil(tbxPseudo.Text, pbxMdp.Password);
             { 
-                if (p != null && p.getPremiereCo() == 1)
+                if (p != null && p.PremiereCo == 1)
                 {
                     lblNom.Visibility = Visibility.Visible;
-                    lblNom.Content = "Bienvenue" + " " + p.getNom() + " " + p.getPrenom();
+                    lblNom.Content = "Bienvenue" + " " + p.Nom + " " + p.PremiereCo +" " + p.Prenom;
      
                     menu.Visibility = Visibility.Visible;
                     gridConnexion.Visibility = Visibility.Hidden;
 
 
 
-                    foreach (Role r in p.getRoles())
+                    foreach (Role r in p.Roles)
                     {
                         if (r.getLibelle().Equals("Admin"))
                         {
@@ -72,7 +72,7 @@ namespace Point_Foot
 
                     }
                 }
-                else if (p !=null && p.getPremiereCo() == 0)
+                else if (p !=null && p.PremiereCo == 0)
                 {
                     gridConnexion.Visibility = Visibility.Hidden;
                     gridPremiereCo.Visibility = Visibility.Visible;
@@ -131,6 +131,7 @@ namespace Point_Foot
             tbxPseudo.Text = "";
             pbxMdp.Password = "";
             tbxPseudo.Focus();
+            gridPremiereCo.Visibility = Visibility.Hidden;
         }
 
         private void gridConnexion_KeyDown(object sender, KeyEventArgs e)
@@ -143,7 +144,7 @@ namespace Point_Foot
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            p.setMdp(tbxNewMdp.Text);
+            //p.setMdp(tbxNewMdp.Text);
         }
     }
 }

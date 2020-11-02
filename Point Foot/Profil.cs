@@ -66,6 +66,7 @@ namespace Point_Foot
         public double Score { get => score; set => score = value; }
         public string NumLicence { get => numLicence; set => numLicence = value; }
         public List<Role> Roles { get => roles; set => roles = value; }
+        public int PremiereCo { get => premiereCo; set => premiereCo = value; }
 
         public static string RandomPassword()
         {
