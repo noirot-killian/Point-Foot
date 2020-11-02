@@ -29,12 +29,6 @@ namespace Point_Foot
             this.roles = AdoRole.All();
             l.ItemsSource = null;
             l.ItemsSource = this.roles;
-          /*  this.cbxRole.SelectedValuePath = "Key";
-            this.cbxRole.DisplayMemberPath = "Value";
-            this.cbxRole.Items.Add(new KeyValuePair<int, string>(1, "Admin"));
-            this.cbxRole.Items.Add(new KeyValuePair<int, string>(30, "frfr"));
-            this.cbxRole.Items.Add(new KeyValuePair<int, string>(50, "frfr"));
-            this.cbxRole.Items.Add(new KeyValuePair<int, string>(100, "frfr"));*/
         }
        
         

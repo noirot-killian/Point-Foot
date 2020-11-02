@@ -20,6 +20,7 @@ namespace Point_Foot
         private double score;
         private string numLicence; 
         private List<Role> roles;
+        private int premiereCo;
 
         public Profil() { }
         public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence)
@@ -34,6 +35,7 @@ namespace Point_Foot
             this.score = unScore;
             this.numLicence = unNumLicence;
             this.roles = new List<Role>();
+            this.premiereCo = 0;
 
         }
         public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate)
@@ -46,6 +48,7 @@ namespace Point_Foot
             this.mdp = RandomPassword();
             this.dateNaiss = uneDate;
             this.roles = new List<Role>();
+            this.premiereCo = 0;
         }
 
 
