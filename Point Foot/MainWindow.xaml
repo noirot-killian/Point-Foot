@@ -21,7 +21,7 @@
             </MenuItem>
         </Menu>
         <Label x:Name="lblCache" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="794" Height="35" Background="#FF59D2FF" Opacity="0.3" Panel.ZIndex="-4" Margin="0,0,-0.4,0"/>
-        <Grid x:Name="gridConnexion" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Panel.ZIndex="2" Margin="0,0,-0.4,0" KeyDown="gridConnexion_KeyDown">
+        <Grid x:Name="gridConnexion" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Panel.ZIndex="2" Margin="0,0,-0.4,0" KeyDown="gridConnexion_KeyDown" d:IsHidden="True">
             <Label Content="Pseudo :" HorizontalAlignment="Center" Margin="355,186,355,0" VerticalAlignment="Top" Width="84" Height="32" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Foreground="White"/>
             <TextBox x:Name="tbxPseudo" HorizontalAlignment="Center" Height="22" Margin="334,218,335,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
             <Label Content="Mot de passe :" HorizontalAlignment="Center" Margin="0,249,0,0" VerticalAlignment="Top" Height="31" Width="143" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Foreground="White"/>
@@ -35,5 +35,12 @@
         <TextBox x:Name="tbxTestMdp" HorizontalAlignment="Left" Height="23" Margin="50,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="71,170,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden"/>
         <Button Content="Logout" HorizontalAlignment="Left" Margin="709,391,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Grid x:Name="gridPremiereCo" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792">
+            <Label Content="Nouveau mot de passe :" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" Width="219" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Foreground="White"/>
+            <TextBox x:Name="tbxNewMdp" HorizontalAlignment="Left" Height="23" Margin="335,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Confirmation mot de passe :" HorizontalAlignment="Center" Margin="263,218,264,0" VerticalAlignment="Top" Width="265" RenderTransformOrigin="0.888,0.451" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Foreground="White"/>
+            <TextBox x:Name="tbxConfirmationMdp" HorizontalAlignment="Center" Height="23" Margin="335,256,337,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Confirmer" HorizontalAlignment="Center" Margin="0,291,0,0" VerticalAlignment="Top" Width="95" Background="#FF6DBBF3" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Click="Button_Click_2"/>
+        </Grid>
     </Grid>
 </Window>

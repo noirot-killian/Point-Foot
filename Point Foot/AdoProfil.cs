@@ -32,7 +32,7 @@ namespace Point_Foot
                 {
 
                     //DateTime dt = DateTime.Parse(((DateTime)reader["date_naiss"]).ToString());
-                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"]);
+                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"], (Int32)reader["premiereCo"]);
                     profils.Add(p);
                 }
                 reader.Close();
@@ -68,11 +68,18 @@ namespace Point_Foot
                 if (!trouve)
                 {
                     double score = 0;
+                    int premiereCo = 0;
+                    if (!reader.IsDBNull(9))
+                    {
+                        premiereCo = reader.GetInt32(9);
+                    }
+
                     if (!reader.IsDBNull(7))
                     {
                         score = reader.GetDouble(7);
                     }
-                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"]);
+                    
+                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"], premiereCo);
                     trouve = true;
                 }
                 Role r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));
@@ -83,6 +90,7 @@ namespace Point_Foot
             reader.Close();
             return p;
         }
+  
         public static Profil create(Profil profil)
         {
             try
@@ -90,7 +98,7 @@ namespace Point_Foot
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO profil(nom,prenom,mail,pseudo,mdp,date_naiss,score,numLicence) VALUES(@nom,@prenom,@mail,@pseudo,@mdp,@date_naiss,@score,@numLicence)";
+                cmd.CommandText = "INSERT INTO profil(nom,prenom,mail,pseudo,mdp,date_naiss,score,numLicence, premiereCo) VALUES(@nom,@prenom,@mail,@pseudo,@mdp,@date_naiss,@score,@numLicence, @premiereCo)";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@nom", profil.getNom());
                 cmd.Parameters.AddWithValue("@prenom", profil.getPrenom());
@@ -100,6 +108,7 @@ namespace Point_Foot
                 cmd.Parameters.AddWithValue("@date_naiss", profil.getDateNaiss());
                 cmd.Parameters.AddWithValue("@score", profil.getScore());
                 cmd.Parameters.AddWithValue("@numLicence", profil.getNumLicence());
+                cmd.Parameters.AddWithValue("@premiereCo", profil.getPremiereCo());
                 cmd.ExecuteNonQuery();
                long id = cmd.LastInsertedId; profil.IdProfil = (int)id;
              
@@ -158,6 +167,31 @@ namespace Point_Foot
 
             }
         }
+        public static void updateProfil(Profil p)
+        {
+           
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "UPDATE profil SET premiereCo = '1'";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@premiereCo", p.getPremiereCo());
+                cmd.ExecuteNonQuery();
+
+                Console.WriteLine("Profil modifié");
+
+                close();
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+        }
+        
 
     }
 }

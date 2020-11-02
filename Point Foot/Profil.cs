@@ -25,7 +25,8 @@ namespace Point_Foot
         public int IdProfil { get => idProfil; set => idProfil = value; }
 
         public Profil() { }
-        public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence)
+        
+        public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence, int unePremiereCo)
         {
             this.idProfil = unId;
             this.nom = unNom;
@@ -36,11 +37,12 @@ namespace Point_Foot
             this.dateNaiss = uneDateNaiss;
             this.score = unScore;
             this.numLicence = unNumLicence;
+            this.premiereCo = unePremiereCo;
             this.roles = new List<Role>();
-            this.premiereCo = 0;
+            
 
         }
-        public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate)
+        public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate, int unePremiereCo)
         {
             this.idProfil = unIdProfil;
             this.nom = unNom;
@@ -50,7 +52,8 @@ namespace Point_Foot
             this.mdp = RandomPassword();
             this.dateNaiss = uneDate;
             this.roles = new List<Role>();
-            this.premiereCo = 0;
+            this.score = 0;
+            this.premiereCo = unePremiereCo;
         }
   
         public int getIdProfil()

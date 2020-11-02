@@ -27,6 +27,7 @@ namespace Point_Foot
             imgBackground.Visibility = Visibility.Visible;
             tbxPseudo.Focus();
             lblCache.Visibility = Visibility.Hidden;
+            gridPremiereCo.Visibility = Visibility.Hidden;
         }
 
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
@@ -37,43 +38,53 @@ namespace Point_Foot
             menuItemJoueur.Visibility = Visibility.Collapsed;
             lblCache.Visibility = Visibility.Visible;
 
-        
+
+            
             Profil p = AdoProfil.unProfil(tbxPseudo.Text, pbxMdp.Password);
-            
-            if (p != null)
-            {
-
-                lblNom.Content = "Bienvenue" + " " + p.getNom() + " " + p.getPrenom();
-                menu.Visibility = Visibility.Visible;
-                gridConnexion.Visibility = Visibility.Hidden;
-                
-
-                foreach (Role r in p.getRoles())
+            { 
+                if (p != null && p.getPremiereCo() == 1)
                 {
-                    if (r.getLibelle().Equals("Admin"))
+                    lblNom.Visibility = Visibility.Visible;
+                    lblNom.Content = "Bienvenue" + " " + p.getNom() + " " + p.getPrenom();
+     
+                    menu.Visibility = Visibility.Visible;
+                    gridConnexion.Visibility = Visibility.Hidden;
+
+
+
+                    foreach (Role r in p.getRoles())
                     {
+                        if (r.getLibelle().Equals("Admin"))
+                        {
 
-                        menuItemRecruteur.Visibility = Visibility.Visible;
+                            menuItemRecruteur.Visibility = Visibility.Visible;
+                        }
+                        if (r.getLibelle().Equals("Educateur"))
+                        {
+
+                            menuItemEntraineur.Visibility = Visibility.Visible;
+                        }
+                        if (r.getLibelle().Equals("Joueur"))
+                        {
+
+                            menuItemJoueur.Visibility = Visibility.Visible;
+                        }
+
                     }
-                    if (r.getLibelle().Equals("Educateur"))
-                    {
-
-                        menuItemEntraineur.Visibility = Visibility.Visible;
-                    }
-                    if (r.getLibelle().Equals("Joueur"))
-                    {
-
-                        menuItemJoueur.Visibility = Visibility.Visible;
-                    }
-
                 }
-            }
-            else
-            {
-
-                MessageBox.Show("Pseudo ou mot de passe incorrect");
-            }
+                else if (p !=null && p.getPremiereCo() == 0)
+                {
+                    gridConnexion.Visibility = Visibility.Hidden;
+                    gridPremiereCo.Visibility = Visibility.Visible;
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Pseudo ou mot de passe incorrect");
+                }
+        
             
+}
 
 
         }
@@ -130,6 +141,9 @@ namespace Point_Foot
             }
         }
 
-
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            p.setMdp(tbxNewMdp.Text);
+        }
     }
 }
