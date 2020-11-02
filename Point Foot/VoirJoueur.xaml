@@ -9,7 +9,7 @@
       Title="VoirJoueur">
 
     <Grid>
-        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="394" Margin="213,30,0,0" VerticalAlignment="Top" Width="368" SelectionChanged="dgVoirJoueur_SelectionChanged"/>
+        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="394" Margin="36,30,0,0" VerticalAlignment="Top" Width="596" SelectionChanged="dgVoirJoueur_SelectionChanged"/>
         <Button x:Name="btnVoirJoueur" Content="Button" HorizontalAlignment="Left" Height="44" Margin="660,57,0,0" VerticalAlignment="Top" Width="115" Click="btnVoirJoueur_Click"/>
     </Grid>
 </Page>

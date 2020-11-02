@@ -32,7 +32,7 @@ namespace Point_Foot
                 {
 
                     //DateTime dt = DateTime.Parse(((DateTime)reader["date_naiss"]).ToString());
-                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"], (Int32)reader["premiereCo"]);
+                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"]);
                     profils.Add(p);
                 }
                 reader.Close();
@@ -68,29 +68,21 @@ namespace Point_Foot
                 if (!trouve)
                 {
                     double score = 0;
-                    int premiereCo = 0;
-                    if (!reader.IsDBNull(9))
-                    {
-                        premiereCo = reader.GetInt32(9);
-                    }
-
                     if (!reader.IsDBNull(7))
                     {
                         score = reader.GetDouble(7);
                     }
-                    
-                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"], premiereCo);
+                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"]);
                     trouve = true;
                 }
                 Role r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));
-                p.getRoles().Add(r);
+                p.Roles.Add(r);
                 r.getProfils().Add(p);
 
             }
             reader.Close();
             return p;
         }
-  
         public static Profil create(Profil profil)
         {
             try
@@ -98,17 +90,16 @@ namespace Point_Foot
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO profil(nom,prenom,mail,pseudo,mdp,date_naiss,score,numLicence, premiereCo) VALUES(@nom,@prenom,@mail,@pseudo,@mdp,@date_naiss,@score,@numLicence, @premiereCo)";
+                cmd.CommandText = "INSERT INTO profil(nom,prenom,mail,pseudo,mdp,date_naiss,score,numLicence) VALUES(@nom,@prenom,@mail,@pseudo,@mdp,@date_naiss,@score,@numLicence)";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@nom", profil.getNom());
-                cmd.Parameters.AddWithValue("@prenom", profil.getPrenom());
-                cmd.Parameters.AddWithValue("@mail", profil.getMail());
-                cmd.Parameters.AddWithValue("@pseudo", profil.getPseudo());
-                cmd.Parameters.AddWithValue("@mdp", Encrypt(profil.getMdp()));
-                cmd.Parameters.AddWithValue("@date_naiss", profil.getDateNaiss());
-                cmd.Parameters.AddWithValue("@score", profil.getScore());
-                cmd.Parameters.AddWithValue("@numLicence", profil.getNumLicence());
-                cmd.Parameters.AddWithValue("@premiereCo", profil.getPremiereCo());
+                cmd.Parameters.AddWithValue("@nom", profil.Nom);
+                cmd.Parameters.AddWithValue("@prenom", profil.Prenom);
+                cmd.Parameters.AddWithValue("@mail", profil.Mail);
+                cmd.Parameters.AddWithValue("@pseudo", profil.Pseudo);
+                cmd.Parameters.AddWithValue("@mdp", Encrypt(profil.Mdp));
+                cmd.Parameters.AddWithValue("@date_naiss", profil.DateNaiss);
+                cmd.Parameters.AddWithValue("@score", profil.Score);
+                cmd.Parameters.AddWithValue("@numLicence", profil.NumLicence);
                 cmd.ExecuteNonQuery();
                long id = cmd.LastInsertedId; profil.IdProfil = (int)id;
              
@@ -152,36 +143,12 @@ namespace Point_Foot
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO profil_role(idProfil, idRole) VALUES(@idProfil, @idRole)";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@idProfil", p.getIdProfil());
+                cmd.Parameters.AddWithValue("@idProfil", p.IdProfil);
                 cmd.Parameters.AddWithValue("@idRole" ,role.getIdRole());
                 cmd.ExecuteNonQuery();
                 
                 Console.WriteLine("Profil crée");
              
-                close();
-
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-
-            }
-        }
-        public static void updateProfil(Profil p)
-        {
-           
-            try
-            {
-                open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = "UPDATE profil SET premiereCo = '1'";
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@premiereCo", p.getPremiereCo());
-                cmd.ExecuteNonQuery();
-
-                Console.WriteLine("Profil modifié");
-
                 close();
 
             }
