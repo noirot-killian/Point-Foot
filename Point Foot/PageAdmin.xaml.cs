@@ -52,7 +52,7 @@ namespace Point_Foot
             }
 
    
-            MessageBox.Show("Le mot de passe est" + " " + p.getMdp());
+            MessageBox.Show("Le mot de passe est" + " " + p.Mdp);
         }
 
         

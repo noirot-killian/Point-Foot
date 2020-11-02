@@ -76,7 +76,7 @@ namespace Point_Foot
                     trouve = true;
                 }
                 Role r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));
-                p.getRoles().Add(r);
+                p.Roles.Add(r);
                 r.getProfils().Add(p);
 
             }
@@ -92,14 +92,14 @@ namespace Point_Foot
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO profil(nom,prenom,mail,pseudo,mdp,date_naiss,score,numLicence) VALUES(@nom,@prenom,@mail,@pseudo,@mdp,@date_naiss,@score,@numLicence)";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@nom", profil.getNom());
-                cmd.Parameters.AddWithValue("@prenom", profil.getPrenom());
-                cmd.Parameters.AddWithValue("@mail", profil.getMail());
-                cmd.Parameters.AddWithValue("@pseudo", profil.getPseudo());
-                cmd.Parameters.AddWithValue("@mdp", Encrypt(profil.getMdp()));
-                cmd.Parameters.AddWithValue("@date_naiss", profil.getDateNaiss());
-                cmd.Parameters.AddWithValue("@score", profil.getScore());
-                cmd.Parameters.AddWithValue("@numLicence", profil.getNumLicence());
+                cmd.Parameters.AddWithValue("@nom", profil.Nom);
+                cmd.Parameters.AddWithValue("@prenom", profil.Prenom);
+                cmd.Parameters.AddWithValue("@mail", profil.Mail);
+                cmd.Parameters.AddWithValue("@pseudo", profil.Pseudo);
+                cmd.Parameters.AddWithValue("@mdp", Encrypt(profil.Mdp));
+                cmd.Parameters.AddWithValue("@date_naiss", profil.DateNaiss);
+                cmd.Parameters.AddWithValue("@score", profil.Score);
+                cmd.Parameters.AddWithValue("@numLicence", profil.NumLicence);
                 cmd.ExecuteNonQuery();
                long id = cmd.LastInsertedId; profil.IdProfil = (int)id;
              
@@ -143,7 +143,7 @@ namespace Point_Foot
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO profil_role(idProfil, idRole) VALUES(@idProfil, @idRole)";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@idProfil", p.getIdProfil());
+                cmd.Parameters.AddWithValue("@idProfil", p.IdProfil);
                 cmd.Parameters.AddWithValue("@idRole" ,role.getIdRole());
                 cmd.ExecuteNonQuery();
                 
@@ -158,6 +158,7 @@ namespace Point_Foot
 
             }
         }
+        
 
     }
 }

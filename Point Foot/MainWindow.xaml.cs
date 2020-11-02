@@ -41,11 +41,11 @@ namespace Point_Foot
             Profil p = AdoProfil.unProfil(tbxPseudo.Text, pbxMdp.Password);
             if (p != null)
             {
-                lblNom.Content = "Bienvenue" + " " + p.getNom() + " " + p.getPrenom();
+                lblNom.Content = "Bienvenue" + " " + p.Nom + " " + p.Prenom;
                 menu.Visibility = Visibility.Visible;
                 gridConnexion.Visibility = Visibility.Hidden;
 
-                foreach (Role r in p.getRoles())
+                foreach (Role r in p.Roles)
                 {
                     if (r.getLibelle().Equals("Admin"))
                     {
