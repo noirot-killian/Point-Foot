@@ -53,6 +53,15 @@ namespace Point_Foot
             this.score = 0;
             this.premiereCo = unePremiereCo;
         }
+        public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, double unScore, string unNumLicence)
+        {
+            this.idProfil = unIdProfil;
+            this.nom = unNom;
+            this.prenom = unPrenom;
+            this.mail = unMail;
+            this.score = unScore;
+            this.numLicence = unNumLicence;
+        }
 
 
 

@@ -30,10 +30,13 @@ namespace Point_Foot
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-
-                    //DateTime dt = DateTime.Parse(((DateTime)reader["date_naiss"]).ToString());
-                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"], (Int32)reader["premiereCo"]);
-                    profils.Add(p);
+                    double score = 0;
+                    if (!reader.IsDBNull(7))
+                    {
+                        score = reader.GetInt32(7);
+                    }
+                    Profil pro = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["mail"], score, (String)reader["numLicence"]);
+                    profils.Add(pro);
                 }
                 reader.Close();
                 return profils;
@@ -49,6 +52,7 @@ namespace Point_Foot
                 close();
             }
         }
+    
         public static Profil unProfil(string pseudo, string mdp)
         {
             Profil p = null;
@@ -162,6 +166,32 @@ namespace Point_Foot
                 Console.WriteLine(ex.Message);
 
             }
+        }
+        public static void update(string newMdp, int id)
+        {
+            
+            open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "UPDATE profil SET mdp = @mdp WHERE idProfil = @id";
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@mdp",Encrypt(newMdp));
+            
+            cmd.ExecuteNonQuery();
+        }
+        public static void updatePremiereCo(int unePremiereCo, int id)
+        {
+           
+            open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "UPDATE profil SET premiereCo = @premiereCo WHERE idProfil = @id";
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@premiereCo", unePremiereCo);
+
+            cmd.ExecuteNonQuery();
         }
         
 
