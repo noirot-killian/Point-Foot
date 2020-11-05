@@ -39,15 +39,14 @@ namespace Point_Foot
             menuItemEntraineur.Visibility = Visibility.Collapsed;
             menuItemJoueur.Visibility = Visibility.Collapsed;
             lblCache.Visibility = Visibility.Visible;
-
-
             
-            Profil p = AdoProfil.unProfil(tbxPseudo.Text, pbxMdp.Password);
+           
+             this.p = AdoProfil.unProfil(tbxPseudo.Text, pbxMdp.Password);
             { 
                 if (p != null && p.PremiereCo == 1)
                 {
                     lblNom.Visibility = Visibility.Visible;
-                    lblNom.Content = "Bienvenue" + " " + p.Nom + " " + p.PremiereCo +" " + p.Prenom;
+                    lblNom.Content = "Bienvenue" + " " + p.Nom +" " + p.Prenom;
      
                     menu.Visibility = Visibility.Visible;
                     gridConnexion.Visibility = Visibility.Hidden;
@@ -93,12 +92,14 @@ namespace Point_Foot
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            testFrame.Visibility = Visibility.Visible;
             testFrame.Content = new PageAdmin();
             lblNom.Visibility = Visibility.Hidden;
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
+            testFrame.Visibility = Visibility.Visible;
             testFrame.Content = new PageEducateur();
             lblNom.Visibility = Visibility.Hidden;
 
@@ -106,6 +107,7 @@ namespace Point_Foot
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
+            testFrame.Visibility = Visibility.Visible;
             testFrame.Content = new PageJoueur();
             lblNom.Visibility = Visibility.Hidden;
 
@@ -113,6 +115,7 @@ namespace Point_Foot
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
+            testFrame.Visibility = Visibility.Visible;
             testFrame.Content = new VoirJoueur();
             lblNom.Visibility = Visibility.Hidden;
         }
@@ -124,7 +127,7 @@ namespace Point_Foot
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            testFrame.Visibility = Visibility.Hidden;
+            testFrame.Visibility = Visibility.Collapsed;
             menu.Visibility = Visibility.Collapsed;
             gridConnexion.Visibility = Visibility.Visible;
             imgBackground.Visibility = Visibility.Visible;
@@ -147,7 +150,17 @@ namespace Point_Foot
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //p.setMdp(tbxNewMdp.Text);
+            
+            AdoProfil.update(tbxNewMdp.Text, this.p.IdProfil );
+            if(tbxNewMdp.Text != tbxConfirmationMdp.Text)
+            {
+                MessageBox.Show("Erreur, les mots de passse sont différents");
+            }
+            AdoProfil.updatePremiereCo(1, this.p.IdProfil);
+
+            
+            
+
         }
     }
 }
