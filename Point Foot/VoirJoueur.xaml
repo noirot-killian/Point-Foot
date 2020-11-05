@@ -9,7 +9,7 @@
       Title="VoirJoueur">
 
     <Grid>
-        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="394" Margin="36,30,0,0" VerticalAlignment="Top" Width="714" SelectionChanged="dgVoirJoueur_SelectionChanged" AutoGenerateColumns="false">
+        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="394" Margin="36,30,0,0" VerticalAlignment="Top" Width="714" SelectionChanged="dgVoirJoueur_SelectionChanged" AutoGenerateColumns="false" IsReadOnly = "True" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IdProfil}"/>
                 <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
