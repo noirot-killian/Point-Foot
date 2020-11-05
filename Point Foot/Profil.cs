@@ -10,73 +10,61 @@ namespace Point_Foot
     public class Profil
     {
 
-        private int idProfil;
-        private string nom;
-        private string prenom;
-        private string mail;
-        private string pseudo;
-        private string mdp;
-        private DateTime dateNaiss;
-        private double score;
-        private string numLicence; 
-        private List<Role> roles;
-        private int premiereCo;
-
         public Profil() { }
         
         public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence, int unePremiereCo)
         {
-            this.idProfil = unId;
-            this.nom = unNom;
-            this.prenom = unPrenom;
-            this.mail = unMail;
-            this.pseudo = unPseudo;
-            this.mdp = RandomPassword();
-            this.dateNaiss = uneDateNaiss;
-            this.score = unScore;
-            this.numLicence = unNumLicence;
-            this.premiereCo = unePremiereCo;
-            this.roles = new List<Role>();
+            this.IdProfil = unId;
+            this.Nom = unNom;
+            this.Prenom = unPrenom;
+            this.Mail = unMail;
+            this.Pseudo = unPseudo;
+            this.Mdp = RandomPassword();
+            this.DateNaiss = uneDateNaiss;
+            this.Score = unScore;
+            this.NumLicence = unNumLicence;
+            this.PremiereCo = unePremiereCo;
+            this.Roles = new List<Role>();
             
 
         }
         public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate, int unePremiereCo)
         {
-            this.idProfil = unIdProfil;
-            this.nom = unNom;
-            this.prenom = unPrenom;
-            this.mail = unMail;
-            this.pseudo = unPseudo;
-            this.mdp = RandomPassword();
-            this.dateNaiss = uneDate;
-            this.roles = new List<Role>();
-            this.score = 0;
-            this.premiereCo = unePremiereCo;
+            this.IdProfil = unIdProfil;
+            this.Nom = unNom;
+            this.Prenom = unPrenom;
+            this.Mail = unMail;
+            this.Pseudo = unPseudo;
+            this.Mdp = RandomPassword();
+            this.DateNaiss = uneDate;
+            this.Roles = new List<Role>();
+            this.Score = 0;
+            this.PremiereCo = unePremiereCo;
         }
+        
+        //Constructeur pour méthode All() de AdoProfil
+
         public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, double unScore, string unNumLicence)
         {
-            this.idProfil = unIdProfil;
-            this.nom = unNom;
-            this.prenom = unPrenom;
-            this.mail = unMail;
-            this.score = unScore;
-            this.numLicence = unNumLicence;
+            this.IdProfil = unIdProfil;
+            this.Nom = unNom;
+            this.Prenom = unPrenom;
+            this.Mail = unMail;
+            this.Score = unScore;
+            this.NumLicence = unNumLicence;
         }
 
-
-
-        public int IdProfil { get => idProfil; set => idProfil = value; }
-        public string Nom { get => nom; set => nom = value; }
-        public string Prenom { get => prenom; set => prenom = value; }
-        public string Mail { get => mail; set => mail = value; }
-        public string Pseudo { get => pseudo; set => pseudo = value; }
-        public string Mdp { get => mdp; set => mdp = value; }
-        public DateTime DateNaiss { get => dateNaiss; set => dateNaiss = value; }
-        public double Score { get => score; set => score = value; }
-        public string NumLicence { get => numLicence; set => numLicence = value; }
-        public List<Role> Roles { get => roles; set => roles = value; }
-        public int PremiereCo { get => premiereCo; set => premiereCo = value; }
-
+        public int IdProfil { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string Mail { get; set; }
+        public string Pseudo { get; set; }
+        public string Mdp { get; set; }
+        public DateTime DateNaiss { get; set; }
+        public double Score { get; set; }
+        public string NumLicence { get; set; }
+        public List<Role> Roles { get; set; }
+        public int PremiereCo { get; set; }
         public static string RandomPassword()
         {
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

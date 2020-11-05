@@ -18,7 +18,8 @@ namespace Point_Foot
         {
 
             InitializeComponent();
-            
+            tbxPseudo.Text = "kln";
+            pbxMdp.Password = "3355";
             foreach (Control i in menu.Items)
             {
                 i.Visibility = Visibility.Hidden;
@@ -28,6 +29,7 @@ namespace Point_Foot
             tbxPseudo.Focus();
             lblCache.Visibility = Visibility.Hidden;
             gridPremiereCo.Visibility = Visibility.Hidden;
+
         }
 
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
@@ -93,9 +95,8 @@ namespace Point_Foot
             testFrame.Visibility = Visibility.Visible;
             testFrame.Content = new PageAdmin();
             lblNom.Visibility = Visibility.Hidden;
-            
-
         }
+
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
             testFrame.Visibility = Visibility.Visible;
@@ -103,6 +104,7 @@ namespace Point_Foot
             lblNom.Visibility = Visibility.Hidden;
 
         }
+
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             testFrame.Visibility = Visibility.Visible;
@@ -110,6 +112,7 @@ namespace Point_Foot
             lblNom.Visibility = Visibility.Hidden;
 
         }
+
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             testFrame.Visibility = Visibility.Visible;

@@ -25,12 +25,6 @@ namespace Point_Foot
         {
             InitializeComponent();
             dgVoirJoueur.ItemsSource = AdoProfil.All();
-            btnVoirJoueur.IsEnabled = false;
-        }
-
-        private void btnVoirJoueur_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void dgVoirJoueur_SelectionChanged(object sender, SelectionChangedEventArgs e)
