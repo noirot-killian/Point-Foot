@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -30,10 +31,13 @@ namespace Point_Foot
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-
-                    //DateTime dt = DateTime.Parse(((DateTime)reader["date_naiss"]).ToString());
-                    Profil p = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["pseudo"], (String)reader["mail"], (DateTime)reader["date_naiss"], (Double)reader["score"], (String)reader["numLicence"], (Int32)reader["premiereCo"]);
-                    profils.Add(p);
+                    double score = 0;
+                    if (!reader.IsDBNull(7))
+                    {
+                        score = reader.GetInt32(7);
+                    }
+                    Profil pro = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["mail"], score, (String)reader["numLicence"]);
+                    profils.Add(pro);
                 }
                 reader.Close();
                 return profils;

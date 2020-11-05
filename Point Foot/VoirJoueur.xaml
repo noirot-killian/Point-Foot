@@ -9,7 +9,15 @@
       Title="VoirJoueur">
 
     <Grid>
-        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="394" Margin="36,30,0,0" VerticalAlignment="Top" Width="596" SelectionChanged="dgVoirJoueur_SelectionChanged"/>
-        <Button x:Name="btnVoirJoueur" Content="Button" HorizontalAlignment="Left" Height="44" Margin="660,57,0,0" VerticalAlignment="Top" Width="115" Click="btnVoirJoueur_Click"/>
+        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="394" Margin="36,30,0,0" VerticalAlignment="Top" Width="714" SelectionChanged="dgVoirJoueur_SelectionChanged" AutoGenerateColumns="false">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdProfil}"/>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header="Mail" Binding="{Binding Mail}"/>
+                <DataGridTextColumn Header="Score" Binding="{Binding Score}"/>
+                <DataGridTextColumn Header="Numéro Licence" Binding="{Binding NumLicence}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
