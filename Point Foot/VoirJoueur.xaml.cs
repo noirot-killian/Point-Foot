@@ -20,7 +20,6 @@ namespace Point_Foot
     /// </summary>
     public partial class VoirJoueur : Page
     {
-        
         public VoirJoueur()
         {
             InitializeComponent();

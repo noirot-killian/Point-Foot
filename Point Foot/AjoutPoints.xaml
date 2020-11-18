@@ -1,0 +1,17 @@
+﻿<Page x:Class="Point_Foot.AjoutPoints"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Point_Foot"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AjoutPoints">
+
+    <Grid>
+        <Label Content="Ajout Points" HorizontalAlignment="Left" Height="48" Margin="312,55,0,0" VerticalAlignment="Top" Width="172" FontSize="22"/>
+        <ComboBox x:Name="cbxListeJoueurs" HorizontalAlignment="Left" Height="41" Margin="70,175,0,0" VerticalAlignment="Top" Width="310" SelectionChanged="cbxListeJoueurs_SelectionChanged"/>
+        <Label x:Name="lblListeJoueurs" Content="" HorizontalAlignment="Left" Height="54" Margin="100,248,0,0" VerticalAlignment="Top" Width="215"/>
+
+    </Grid>
+</Page>

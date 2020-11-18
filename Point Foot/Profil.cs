@@ -79,6 +79,11 @@ namespace Point_Foot
             var finalString = new String(stringChars);
             return finalString;
         }
-       
+
+        public override string ToString()
+        {
+            return this.Nom + " " + this.Prenom;
+        }
+
     }
 }

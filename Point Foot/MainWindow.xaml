@@ -12,6 +12,7 @@
             <MenuItem x:Name="menuItemRecruteur" Header="Recruteur" Height="35" Width="309" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Foreground="White" Background="Transparent" BorderBrush="{x:Null}">
                 <MenuItem Header="Créer un joueur" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" Click="MenuItem_Click" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0"/>
                 <MenuItem Header="Voir les joueurs" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0" Click="MenuItem_Click_3"/>
+                <MenuItem Header="Ajouter des points" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0" Click="MenuItem_Click_4"/>
             </MenuItem>
             <MenuItem x:Name="menuItemEntraineur" Header="Entraineur" Height="32" Width="269" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Foreground="White">
                 <MenuItem Header="Gérer les joueurs" HorizontalAlignment="Left" Height="45" Width="176" Margin="-34,0,-41.2,0" Click="MenuItem_Click_2"/>

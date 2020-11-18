@@ -114,6 +114,9 @@
     <Compile Include="AdoProfil.cs" />
     <Compile Include="AdoProfilRole.cs" />
     <Compile Include="AdoRole.cs" />
+    <Compile Include="AjoutPoints.xaml.cs">
+      <DependentUpon>AjoutPoints.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageAdmin.xaml.cs">
       <DependentUpon>PageAdmin.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
     <Compile Include="VoirJoueur.xaml.cs">
       <DependentUpon>VoirJoueur.xaml</DependentUpon>
     </Compile>
+    <Page Include="AjoutPoints.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

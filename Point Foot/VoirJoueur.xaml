@@ -9,7 +9,11 @@
       Title="VoirJoueur">
 
     <Grid>
-        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="394" Margin="36,30,0,0" VerticalAlignment="Top" Width="714" SelectionChanged="dgVoirJoueur_SelectionChanged" AutoGenerateColumns="false" IsReadOnly = "True" >
+        <Button x:Name="btnModifier" Content="Modifier" HorizontalAlignment="Left" Height="46" Margin="650,199,0,0" VerticalAlignment="Top" Width="112"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Height="49" Margin="650,250,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblJoueurs" Content="Joueurs :" HorizontalAlignment="Left" Height="35" Margin="650,159,0,0" VerticalAlignment="Top" Width="112" FontSize="18" FontFamily="Verdana Pro Black"/>
+
+        <DataGrid x:Name="dgVoirJoueur" HorizontalAlignment="Left" Height="373" Margin="36,30,0,0" VerticalAlignment="Top" Width="556" SelectionChanged="dgVoirJoueur_SelectionChanged" AutoGenerateColumns="false" IsReadOnly = "True" Background="LightGray" RowBackground="LightYellow" AlternatingRowBackground="LightBlue">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IdProfil}"/>
                 <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
@@ -19,5 +23,6 @@
                 <DataGridTextColumn Header="Numéro Licence" Binding="{Binding NumLicence}"/>
             </DataGrid.Columns>
         </DataGrid>
+
     </Grid>
 </Page>
