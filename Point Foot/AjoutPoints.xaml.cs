@@ -21,20 +21,35 @@ namespace Point_Foot
     public partial class AjoutPoints : Page
     {
         List<Profil> profils;
+        List<Action> actions;
         public AjoutPoints()
         {
             InitializeComponent();
             this.profils = AdoProfil.All();
             cbxListeJoueurs.ItemsSource = null;
             cbxListeJoueurs.ItemsSource = this.profils;
+
+
+            this.actions = AdoAction.All();
+            cbxListeActions.ItemsSource = null;
+            cbxListeActions.ItemsSource = this.actions;
         }
 
         private void cbxListeJoueurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cbxListeJoueurs.SelectedIndex != -1)
             {
-                // comme pour le datagrid on récupère le fighter sélectionné
                 Profil p = (Profil)(cbxListeJoueurs.SelectedItem);
+                lblNbPoints.Content = Convert.ToString(p.Score);
+            }
+        }
+
+        private void cbxListeActions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbxListeActions.SelectedIndex != -1)
+            {
+                Action a = (Action)(cbxListeActions.SelectedItem);
+                tbxBareme.Text = Convert.ToString(a.Bareme);
             }
         }
     }

@@ -18,7 +18,17 @@ namespace Point_Foot
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    Action a = new Action((Int32)reader["codeAct"], (String)reader["desiAct"], (Int32)reader["bareme"], (Boolean)reader["jeuneO/N"]);
+                    int bareme = 0;
+                    int jeune = 0;
+                    if (!reader.IsDBNull(2))
+                    {
+                        bareme = reader.GetInt32(2);
+                    }
+                    if (!reader.IsDBNull(3))
+                    {
+                        jeune = reader.GetInt32(3);
+                    }
+                    Action a = new Action((Int32)reader["codeAct"], (String)reader["desiAct"], bareme, Convert.ToBoolean(jeune));
                     actions.Add(a);
                 }
                 reader.Close();
