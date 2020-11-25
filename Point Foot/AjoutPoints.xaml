@@ -9,9 +9,16 @@
       Title="AjoutPoints">
 
     <Grid>
-        <Label Content="Ajout Points" HorizontalAlignment="Left" Height="48" Margin="312,55,0,0" VerticalAlignment="Top" Width="172" FontSize="22"/>
-        <ComboBox x:Name="cbxListeJoueurs" HorizontalAlignment="Left" Height="41" Margin="70,175,0,0" VerticalAlignment="Top" Width="310" SelectionChanged="cbxListeJoueurs_SelectionChanged"/>
-        <Label x:Name="lblListeJoueurs" Content="" HorizontalAlignment="Left" Height="54" Margin="100,248,0,0" VerticalAlignment="Top" Width="215"/>
+        <Label x:Name="lblTitreAjoutPoints" Content="Ajouter / Enlever des points" HorizontalAlignment="Left" Height="48" Margin="273,38,0,0" VerticalAlignment="Top" Width="299" FontSize="24" FontFamily="Franklin Gothic Medium"/>
+        <ComboBox x:Name="cbxListeJoueurs" HorizontalAlignment="Left" Height="41" Margin="40,158,0,0" VerticalAlignment="Top" Width="310" SelectionChanged="cbxListeJoueurs_SelectionChanged" FontFamily="Franklin Gothic Medium" FontSize="14"/>
+        <ComboBox x:Name="cbxListeActions" HorizontalAlignment="Left" Height="41" Margin="481,158,0,0" VerticalAlignment="Top" Width="270" SelectionChanged="cbxListeActions_SelectionChanged" FontFamily="Franklin Gothic Medium" FontSize="14"/>
+        <TextBox x:Name="tbxBareme" HorizontalAlignment="Left" Height="32" Margin="678,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" FontFamily="Franklin Gothic Medium"/>
+        <Button x:Name="btnAppliquer" Content="Appliquer" HorizontalAlignment="Left" Height="56" Margin="337,300,0,0" VerticalAlignment="Top" Width="154" FontFamily="Franklin Gothic Medium" FontSize="16"/>
+        <Label x:Name="lblNbPoints" Content="" HorizontalAlignment="Left" Height="32" Margin="135,224,0,0" VerticalAlignment="Top" Width="79"/>
+        <Label x:Name="lblScore" Content="Score actuel :" HorizontalAlignment="Left" Height="30" Margin="40,224,0,0" VerticalAlignment="Top" Width="90" FontFamily="Franklin Gothic Medium" FontSize="14"/>
+        <Label x:Name="lblBareme" Content="Nombre de points alloués : " HorizontalAlignment="Left" Height="32" Margin="494,222,0,0" VerticalAlignment="Top" Width="170" FontSize="14" FontFamily="Franklin Gothic Medium"/>
+        <Label x:Name="lblSelectJoueur" Content="Sélectionner un joueur :" HorizontalAlignment="Left" Height="38" Margin="94,115,0,0" VerticalAlignment="Top" Width="179" FontFamily="Franklin Gothic Medium" FontSize="16"/>
+        <Label x:Name="lblSelectAction" Content="Sélectionner une action :" HorizontalAlignment="Left" Height="38" Margin="542,115,0,0" VerticalAlignment="Top" Width="185" FontSize="16" FontFamily="Franklin Gothic Medium"/>
 
     </Grid>
 </Page>
