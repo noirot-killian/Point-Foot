@@ -11,6 +11,7 @@
         <Menu x:Name="menu" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="784" Margin="0,0,9.6,0" Background="{x:Null}" Foreground="{x:Null}" Panel.ZIndex="1">
             <MenuItem x:Name="menuItemRecruteur" Header="Recruteur" Height="35" Width="309" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Foreground="White" Background="Transparent" BorderBrush="{x:Null}">
                 <MenuItem Header="Créer un joueur" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" Click="MenuItem_Click" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0"/>
+                <MenuItem Header="Supprimer un joueur" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" Click="MenuItem_Click_Supprimer" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0"/>
                 <MenuItem Header="Voir les joueurs" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0" Click="MenuItem_Click_3"/>
                 <MenuItem Header="Ajouter des points" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0" Click="MenuItem_Click_4"/>
             </MenuItem>

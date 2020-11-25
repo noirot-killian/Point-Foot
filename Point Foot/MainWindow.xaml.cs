@@ -161,6 +161,11 @@ namespace Point_Foot
             AdoProfil.updatePremiereCo(1, this.p.IdProfil);
         }
 
-        
+        private void MenuItem_Click_Supprimer(object sender, RoutedEventArgs e)
+        {
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new SupprimerJoueur();
+            lblNom.Visibility = Visibility.Hidden;
+        }
     }
 }
