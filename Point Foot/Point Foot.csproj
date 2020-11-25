@@ -127,6 +127,9 @@
       <DependentUpon>PageJoueur.xaml</DependentUpon>
     </Compile>
     <Compile Include="Role.cs" />
+    <Compile Include="SupprimerJoueur.xaml.cs">
+      <DependentUpon>SupprimerJoueur.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VoirJoueur.xaml.cs">
       <DependentUpon>VoirJoueur.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageJoueur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SupprimerJoueur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
