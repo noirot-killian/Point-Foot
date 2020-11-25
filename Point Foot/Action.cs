@@ -7,16 +7,16 @@ namespace Point_Foot
         private int codeAct;
         private string desiAct;
         private int bareme;
-        private bool jeune;
+        private int jeune;
         private List<Action> actions;
 
         public int Code_Act { get => codeAct; set => codeAct = value; }
         public string Designation_Act { get => desiAct; set => desiAct = value; }
         public int Bareme { get => bareme; set => bareme = value; }
-        public bool Jeune { get => jeune; set => jeune = value; }
+        public int Jeune { get => jeune; set => jeune = value; }
         public List<Action> Actions { get => actions; set => actions = value; }
 
-        public Action(int unCodeAct, string uneDesignationAct, int unBareme, bool unJeune)
+        public Action(int unCodeAct, string uneDesignationAct, int unBareme, int unJeune)
         {
             this.codeAct = unCodeAct;
             this.desiAct = uneDesignationAct;

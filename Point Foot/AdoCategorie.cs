@@ -35,5 +35,29 @@ namespace Point_Foot
                 close();
             }
         }
+        public static void createCategorie(Categorie categorie)
+        {
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO categorie(desiCat,prixLicence,jeune) VALUES(@desiCat,@prixLicence,@jeune)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@desiCat", categorie.Designation_Cat);
+                cmd.Parameters.AddWithValue("@prixLicence", categorie.PrixLicence);
+                cmd.Parameters.AddWithValue("@jeune", categorie.Jeune);
+                cmd.ExecuteNonQuery();
+
+                Console.WriteLine("Catégorie créée");
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+           
+        }
     }
 }

@@ -10,11 +10,21 @@
         <Frame x:Name="testFrame" HorizontalAlignment="Left" Height="375" Margin="0,35,-0.4,0" VerticalAlignment="Top" Width="794" Panel.ZIndex="-1" NavigationUIVisibility="Hidden"/>
         <Menu x:Name="menu" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="784" Margin="0,0,9.6,0" Background="{x:Null}" Foreground="{x:Null}" Panel.ZIndex="1">
             <MenuItem x:Name="menuItemRecruteur" Header="Recruteur" Height="35" Width="309" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Foreground="White" Background="Transparent" BorderBrush="{x:Null}">
-                <MenuItem Header="Créer un joueur" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" Click="MenuItem_Click" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0"/>
-                <MenuItem Header="Voir les joueurs" Height="25" Width="249" HorizontalAlignment="Left" FontSize="11" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Margin="-26,0,0,0" Click="MenuItem_Click_3"/>
+                <MenuItem Header="Gérer les joueurs" HorizontalAlignment="Left" Height="35" Width="251" Background="#FF94BCFF" FontSize="11" Margin="-27,0,0,0">
+                    <MenuItem Header="Voir les joueurs" Height="25" Width="262" HorizontalAlignment="Left" FontSize="11" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="Créer un joueur" Height="25" Width="264" HorizontalAlignment="Left" FontSize="11" Click="MenuItem_Click" VerticalAlignment="Center" Background="#FF94BCFF" BorderBrush="{x:Null}"/>
+                </MenuItem>
+                <MenuItem Header="Gérer les actions" HorizontalAlignment="Left" Height="35" Width="252" FontSize="11" Margin="-28,0,0,0" Background="#FF94BCFF">
+                    <MenuItem Header="Voir les actions" HorizontalAlignment="Left" Height="26" Width="261" FontSize="11" Background="#FF94BCFF" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="Créer une action" HorizontalAlignment="Left" Height="35" Width="261" Margin="0,0,-0.2,0" Background="#FF94BCFF" Click="MenuItem_Click_7"/>
+                </MenuItem>
+                <MenuItem Header="Gérer les catégories" HorizontalAlignment="Left" Height="35" Width="252" FontSize="11" Margin="-28,0,0,0" Background="#FF94BCFF">
+                    <MenuItem Header="Créer une catégorie" HorizontalAlignment="Left" Height="30" Width="256" FontSize="11" Background="#FF94BCFF" Click="MenuItem_Click_6"/>
+                </MenuItem>
             </MenuItem>
             <MenuItem x:Name="menuItemEntraineur" Header="Entraineur" Height="32" Width="269" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Foreground="White">
                 <MenuItem Header="Gérer les joueurs" HorizontalAlignment="Left" Height="45" Width="176" Margin="-34,0,-41.2,0" Click="MenuItem_Click_2"/>
+                <MenuItem Header="Mes points" HorizontalAlignment="Left" Height="39" Width="166" Margin="0,0,-0.4,0" Click="MenuItem_Click_5"/>
             </MenuItem>
             <MenuItem x:Name="menuItemJoueur" Header="Joueur" Height="35" Width="203" HorizontalAlignment="Center" FontFamily="Franklin Gothic Demi Cond" FontSize="18" Foreground="White">
                 <MenuItem Header="Mes points" HorizontalAlignment="Left" Height="50" Width="158" Margin="-11,0,-23.8,0" Click="MenuItem_Click_1"/>
@@ -34,7 +44,7 @@
         <TextBox x:Name="tbxTestPseudo" HorizontalAlignment="Left" Height="23" Margin="50,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
         <TextBox x:Name="tbxTestMdp" HorizontalAlignment="Left" Height="23" Margin="50,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="71,170,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden"/>
-        <Button Content="Logout" HorizontalAlignment="Left" Margin="709,391,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Déconnexion" HorizontalAlignment="Left" Margin="709,391,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Grid x:Name="gridPremiereCo" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792" Margin="-20,0,0,0">
             <Label Content="Nouveau mot de passe :" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" Width="219" FontFamily="Franklin Gothic Demi Cond" FontSize="20" Foreground="White"/>
             <TextBox x:Name="tbxNewMdp" HorizontalAlignment="Left" Height="23" Margin="335,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

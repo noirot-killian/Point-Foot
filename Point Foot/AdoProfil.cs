@@ -19,6 +19,23 @@ namespace Point_Foot
 
             }
         }
+        //Met la premiere lettre nom en maj si ce n'est pas le cas
+        public static string newName(string nom)
+        {
+            string oldstring = nom;
+            string newstring = oldstring[0].ToString().ToUpper() + oldstring.Substring(1).ToLower();
+            return newstring;
+        }
+
+
+
+        //Met la premiere lettre prenom en maj si ce n'est pas le cas
+        public static string newSurname(string prenom)
+        {
+            string oldstring = prenom;
+            string newstring = oldstring[0].ToString().ToUpper() + oldstring.Substring(1).ToLower();
+            return newstring;
+        }
         public static List<Profil> All()
         {
             try
@@ -36,7 +53,7 @@ namespace Point_Foot
                     {
                         score = reader.GetInt32(7);
                     }
-                    Profil pro = new Profil((Int32)reader["idProfil"], (String)reader["nom"], (String)reader["prenom"], (String)reader["mail"], score, (String)reader["numLicence"]);
+                    Profil pro = new Profil((Int32)reader["idProfil"], newName((String)reader["nom"]), newSurname((String)reader["prenom"]), (String)reader["mail"], score, (String)reader["numLicence"]);
                     profils.Add(pro);
                 }
                 reader.Close();
@@ -82,7 +99,7 @@ namespace Point_Foot
                     {
                         premiereCo = reader.GetInt32(9);
                     }
-                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetString("pseudo"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"], premiereCo);
+                    p = new Profil(reader.GetInt32("idProfil"), reader.GetString("nom"), reader.GetString("prenom"), reader.GetString("mail"), reader.GetDateTime("date_naiss"), score, (String)reader["numLicence"], premiereCo);
                     trouve = true;
                 }
                 Role r = new Role(reader.GetInt32("idRole"), reader.GetString("libelle"));

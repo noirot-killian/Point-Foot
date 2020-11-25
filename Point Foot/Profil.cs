@@ -12,13 +12,13 @@ namespace Point_Foot
 
         public Profil() { }
         
-        public Profil(int unId, string unNom, string unPrenom, string unMail, string unPseudo, DateTime uneDateNaiss, double unScore, string unNumLicence, int unePremiereCo)
+        public Profil(int unId, string unNom, string unPrenom, string unMail, DateTime uneDateNaiss, double unScore, string unNumLicence, int unePremiereCo)
         {
             this.IdProfil = unId;
             this.Nom = unNom;
             this.Prenom = unPrenom;
             this.Mail = unMail;
-            this.Pseudo = unPseudo;
+            this.Pseudo = CreatePseudo();
             this.Mdp = RandomPassword();
             this.DateNaiss = uneDateNaiss;
             this.Score = unScore;
@@ -28,13 +28,13 @@ namespace Point_Foot
             
 
         }
-        public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unPseudo, string unMdp, DateTime uneDate, int unePremiereCo)
+        public Profil(int unIdProfil, string unNom, string unPrenom, string unMail, string unMdp, DateTime uneDate, int unePremiereCo)
         {
             this.IdProfil = unIdProfil;
             this.Nom = unNom;
             this.Prenom = unPrenom;
             this.Mail = unMail;
-            this.Pseudo = unPseudo;
+            this.Pseudo = CreatePseudo();
             this.Mdp = RandomPassword();
             this.DateNaiss = uneDate;
             this.Roles = new List<Role>();
@@ -79,6 +79,11 @@ namespace Point_Foot
             var finalString = new String(stringChars);
             return finalString;
         }
-       
+        public string CreatePseudo()
+        {
+            Pseudo = Prenom.Substring(0, 1) + Nom;
+            return Pseudo;
+        }
+
     }
 }

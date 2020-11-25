@@ -36,7 +36,7 @@ namespace Point_Foot
         private void btnCréer_Click(object sender, RoutedEventArgs e)
         {
             
-            Profil p = new Profil(0, tbxNom.Text, tbxPrenom.Text, tbxMail.Text, tbxPseudo.Text, Convert.ToDateTime(tbxDateNaiss.Text), Convert.ToInt32(tbxScore.Text), tbxNumLicence.Text, 0);
+            Profil p = new Profil(0, tbxNom.Text, tbxPrenom.Text, tbxMail.Text, Convert.ToDateTime(tbxDateNaiss.Text), Convert.ToInt32(tbxScore.Text), tbxNumLicence.Text, 0);
             // on ajoute le nouveau profil en base de données
            p= AdoProfil.create(p);
             

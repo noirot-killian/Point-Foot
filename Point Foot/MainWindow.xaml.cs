@@ -11,7 +11,7 @@ namespace Point_Foot
     public partial class MainWindow : Window
     {
 
-        private Profil p;
+        public Profil p;
         List<Profil> profils;
         
         public MainWindow()
@@ -119,6 +119,30 @@ namespace Point_Foot
             testFrame.Content = new VoirJoueur();
             lblNom.Visibility = Visibility.Hidden;
         }
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new VoirAction();
+            lblNom.Visibility = Visibility.Hidden;
+        }
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new PagePoints(p);
+            lblNom.Visibility = Visibility.Hidden;
+        }
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new PageCreationCateg();
+            lblNom.Visibility = Visibility.Hidden;
+        }
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new PageCreationAction();
+            lblNom.Visibility = Visibility.Hidden;
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -162,5 +186,7 @@ namespace Point_Foot
             
 
         }
+
+        
     }
 }

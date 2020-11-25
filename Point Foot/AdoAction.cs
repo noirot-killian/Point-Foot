@@ -18,7 +18,24 @@ namespace Point_Foot
                 reader = requete.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    Action a = new Action((Int32)reader["codeAct"], (String)reader["desiAct"], (Int32)reader["bareme"], (Boolean)reader["jeuneO/N"]);
+                   
+                    int bareme = 0;
+                    int jeune = 0;
+                    int codeAct = 0;
+                   
+                    if (!reader.IsDBNull(2))
+                    {
+                        bareme = reader.GetInt32(2);
+                    }
+                    if (!reader.IsDBNull(3))
+                    {
+                        jeune = reader.GetInt32(3);
+                    }
+                    if(!reader.IsDBNull(0))
+                    {
+                        codeAct = reader.GetInt32(0);
+                    }
+                    Action a = new Action(codeAct, (String)reader["desiAct"], bareme, jeune);
                     actions.Add(a);
                 }
                 reader.Close();
@@ -34,6 +51,30 @@ namespace Point_Foot
             {
                 close();
             }
+        }
+        public static void createAction(Action action)
+        {
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO action(desiAct,bareme,jeune) VALUES(@desiAct,@bareme,@jeune)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@desiAct", action.Designation_Act);
+                cmd.Parameters.AddWithValue("@bareme", action.Bareme);
+                cmd.Parameters.AddWithValue("@jeune", action.Jeune);
+                cmd.ExecuteNonQuery();
+
+                Console.WriteLine("Action créée");
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+
         }
     }
 }

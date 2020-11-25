@@ -6,19 +6,23 @@ namespace Point_Foot
 {
     public class AdoActionProfil : Ado
     {
-        public static List<ActionProfil> All()
+        public static List<ActionProfil> voirHistorique(int unId)
         {
             try
             {
                 List<ActionProfil> actions_profils = new List<ActionProfil>();
                 MySqlDataReader reader; // Contiendra les données
                 open();
-                MySqlCommand requete = new MySqlCommand("SELECT * FROM action_profil");
-                requete.Connection = conn; // Connexion instanciée auparavant
-                reader = requete.ExecuteReader(); // Exécution de la requête SQL
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM action_profil WHERE idProfil=@id";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", unId);
+                cmd.Connection = conn;
+                reader = cmd.ExecuteReader(); // Exécution de la requête SQL
                 while (reader.Read())
                 {
-                    ActionProfil ap = new ActionProfil((Int32)reader["idProfil"], (Int32)reader["codeAct"], (Double)reader["nbPointsGagnés"], (DateTime)reader["datePointsGagnés"]);
+                    ActionProfil ap = new ActionProfil((Int32)reader["idProfil"], (Int32)reader["codeAct"], (Double)reader["nbPointsGagnes"], (DateTime)reader["datePointsGagnes"]);
                     actions_profils.Add(ap);
                 }
                 reader.Close();

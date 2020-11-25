@@ -18,6 +18,7 @@ namespace Point_Foot
             this.datePoints = uneDatePoints;
         }
 
+
         public int IdProfil { get => idProfil; set => idProfil = value; }
         public int CodeAct { get => codeAct; set => codeAct = value; }
         public double NbPoints { get => nbPoints; set => nbPoints = value; }

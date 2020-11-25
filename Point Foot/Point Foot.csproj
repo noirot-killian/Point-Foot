@@ -117,13 +117,25 @@
     <Compile Include="PageAdmin.xaml.cs">
       <DependentUpon>PageAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageCreationAction.xaml.cs">
+      <DependentUpon>PageCreationAction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageCreationCateg.xaml.cs">
+      <DependentUpon>PageCreationCateg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageEducateur.xaml.cs">
       <DependentUpon>PageEducateur.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageJoueur.xaml.cs">
       <DependentUpon>PageJoueur.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PagePoints.xaml.cs">
+      <DependentUpon>PagePoints.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs" />
+    <Compile Include="VoirAction.xaml.cs">
+      <DependentUpon>VoirAction.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VoirJoueur.xaml.cs">
       <DependentUpon>VoirJoueur.xaml</DependentUpon>
     </Compile>
@@ -145,11 +157,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageCreationAction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageCreationCateg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageEducateur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageJoueur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagePoints.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VoirAction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
