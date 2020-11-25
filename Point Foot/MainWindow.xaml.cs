@@ -144,9 +144,11 @@ namespace Point_Foot
             lblNom.Visibility = Visibility.Hidden;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
-
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new AjoutPoints();
+            lblNom.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -181,10 +183,13 @@ namespace Point_Foot
                 MessageBox.Show("Erreur, les mots de passse sont différents");
             }
             AdoProfil.updatePremiereCo(1, this.p.IdProfil);
+        }
 
-            
-            
-
+        private void MenuItem_Click_Supprimer(object sender, RoutedEventArgs e)
+        {
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new SupprimerJoueur();
+            lblNom.Visibility = Visibility.Hidden;
         }
 
         

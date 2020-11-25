@@ -53,7 +53,6 @@ namespace Point_Foot
         public override string ToString()
         {
             return this.getLibelle();
-
         }
     }
 }

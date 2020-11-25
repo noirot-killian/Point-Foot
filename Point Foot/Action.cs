@@ -25,5 +25,10 @@ namespace Point_Foot
         }
         public Action() { }
 
+        public override string ToString()
+        {
+            return this.Designation_Act;
+        }
+
     }
 }

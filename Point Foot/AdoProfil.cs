@@ -147,9 +147,12 @@ namespace Point_Foot
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "DELETE * FROM profil WHERE idProfil = @id";
+                cmd.CommandText = "DELETE FROM profil_role WHERE idProfil = @id";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@id", unId);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "DELETE FROM profil WHERE idProfil = @id";
+                cmd.Prepare();
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("profil supprimé");
                 close();
@@ -211,7 +214,29 @@ namespace Point_Foot
 
             cmd.ExecuteNonQuery();
         }
-        
+
+        public static void updateNbPoints(double newNbPoints, int id)
+        {
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "UPDATE profil SET score = @nbPoints WHERE idProfil = @id";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@nbPoints", newNbPoints);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Score modifié");
+                close();
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+        }
+
 
     }
 }
