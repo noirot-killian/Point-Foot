@@ -130,9 +130,12 @@ namespace Point_Foot
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "DELETE * FROM profil WHERE idProfil = @id";
+                cmd.CommandText = "DELETE FROM profil_role WHERE idProfil = @id";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@id", unId);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "DELETE FROM profil WHERE idProfil = @id";
+                cmd.Prepare();
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("profil supprimé");
                 close();

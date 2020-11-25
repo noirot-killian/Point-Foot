@@ -37,10 +37,10 @@ namespace Point_Foot
                 Profil p = (Profil)(cbxListeJoueurs.SelectedItem);
             }
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_Supprimer_Joueur_Click(object sender, RoutedEventArgs e)
         {
-            cbxListeJoueurs.Items.Remove(cbxListeJoueurs.SelectedItem);
+            Profil p = (Profil)cbxListeJoueurs.SelectedItem;
+            AdoProfil.delete(p.IdProfil);
         }
     }
 }
