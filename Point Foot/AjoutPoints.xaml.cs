@@ -19,7 +19,7 @@ namespace Point_Foot
     /// Logique d'interaction pour AjoutPoints.xaml
     /// </summary>
     public partial class AjoutPoints : Page
-    {  
+    {
         List<Profil> profils;
         List<Action> actions;
         public AjoutPoints()
@@ -56,7 +56,7 @@ namespace Point_Foot
         private void btnAppliquer_Click(object sender, RoutedEventArgs e)
         {
             double newNbPoints = Convert.ToInt32(lblNbPoints.Content) + Convert.ToInt32(tbxBareme.Text);
-            Profil p = (Profil) cbxListeJoueurs.SelectedItem;
+            Profil p = (Profil)cbxListeJoueurs.SelectedItem;
             AdoProfil.updateNbPoints(newNbPoints, p.IdProfil);
         }
     }

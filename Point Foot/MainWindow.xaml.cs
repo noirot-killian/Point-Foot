@@ -143,13 +143,20 @@ namespace Point_Foot
             testFrame.Content = new PageCreationAction();
             lblNom.Visibility = Visibility.Hidden;
         }
-
-        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_8(object sender, RoutedEventArgs e)
         {
             testFrame.Visibility = Visibility.Visible;
             testFrame.Content = new AjoutPoints();
             lblNom.Visibility = Visibility.Hidden;
         }
+        private void MenuItem_Click_9(object sender, RoutedEventArgs e)
+        {
+            testFrame.Visibility = Visibility.Visible;
+            testFrame.Content = new SupprimerJoueur();
+            lblNom.Visibility = Visibility.Hidden;
+        }
+
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -187,9 +194,7 @@ namespace Point_Foot
 
         private void MenuItem_Click_Supprimer(object sender, RoutedEventArgs e)
         {
-            testFrame.Visibility = Visibility.Visible;
-            testFrame.Content = new SupprimerJoueur();
-            lblNom.Visibility = Visibility.Hidden;
+           
         }
 
         

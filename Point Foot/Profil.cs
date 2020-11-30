@@ -84,6 +84,10 @@ namespace Point_Foot
             Pseudo = Prenom.Substring(0, 1) + Nom;
             return Pseudo;
         }
+        public override string ToString()
+        {
+            return Nom + " " + Prenom;
+        }
 
     }
 }

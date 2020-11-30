@@ -9,8 +9,8 @@
       Title="SupprimerJoueur">
 
     <Grid>
-        <ComboBox x:Name="cbxListeJoueurs" HorizontalAlignment="Left" Height="41" Margin="70,175,0,0" VerticalAlignment="Top" Width="310" SelectionChanged="cbxListeJoueurs_SelectionChanged"/>
-        <Button x:Name="Btn_Supprimer_Joueur" Content="Supprimer le joueur selectionné" HorizontalAlignment="Left" Height="111" Margin="437,167,0,0" VerticalAlignment="Top" Width="247" Click="Btn_Supprimer_Joueur_Click"/>
+        <ComboBox x:Name="cbxListeJoueurs" HorizontalAlignment="Left" Height="41" Margin="79,93,0,0" VerticalAlignment="Top" Width="310" SelectionChanged="cbxListeJoueurs_SelectionChanged"/>
+        <Button x:Name="Btn_Supprimer_Joueur" Content="Supprimer le joueur selectionné" HorizontalAlignment="Left" Height="58" Margin="437,93,0,0" VerticalAlignment="Top" Width="247" Click="Btn_Supprimer_Joueur_Click"/>
 
     </Grid>
 </Page>
